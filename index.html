@@ -3,38 +3,38 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SUPERCHARGED · Team T62 · India · Aramco STEM Racing™ World Finals 2025</title>
-<meta name="description" content="Team T62 SUPERCHARGED — five Indian students who built Dasher, a CO₂-powered F1 in Schools car, and represented India at the Aramco STEM Racing World Finals 2025 in Singapore." />
+<title>Supercharged — Team T62 · India · Aramco STEM Racing™ World Finals 2025</title>
+<meta name="description" content="Five students from The British School, New Delhi. One CO₂-powered F1 in Schools car. The Aramco STEM Racing World Finals 2025." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,700;0,900;1,400&family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,300&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   /* --------------------------------------------------------------
-     SUPERCHARGED · Team T62 · STEM Racing World Finals 2025
-     Aesthetic: Industrial racing brutalism, brand red/yellow/blue
+     SUPERCHARGED · Cinematic editorial · Leclerc-inspired
+     Pure black + bone white + brand red. Thin large type.
   -------------------------------------------------------------- */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  ::selection { background: #F5052E; color: #F2EEE5; }
+  ::selection { background: #F5052E; color: #F8F4ED; }
   html { scroll-behavior: smooth; }
 
   :root {
-    --bg: #07091A;
-    --bg-2: #0F1330;
-    --bg-3: #161C3B;
-    --text: #F2EEE5;
-    --muted: #7E8099;
-    --muted-2: #4F5168;
-    --line: rgba(242, 238, 229, 0.10);
-    --line-strong: rgba(242, 238, 229, 0.22);
+    --bg: #050505;
+    --bg-2: #0C0C0C;
+    --bg-3: #141414;
+    --text: #F8F4ED;
+    --text-2: #C9C5BE;
+    --muted: #6E6A63;
+    --muted-2: #3A3A3A;
+    --line: rgba(248, 244, 237, 0.08);
+    --line-strong: rgba(248, 244, 237, 0.18);
     --red: #F5052E;
-    --red-soft: rgba(245, 5, 46, 0.10);
+    --red-2: #C70425;
     --yellow: #E7B922;
-    --blue: #2A4FAA;
-    --blue-deep: #023073;
-    --pad: clamp(1.25rem, 4vw, 3.5rem);
-    --max: 1480px;
-    --font-display: 'Bebas Neue', 'Archivo Black', sans-serif;
-    --font-body: 'Archivo', system-ui, sans-serif;
+    --pad: clamp(1.25rem, 4.2vw, 4rem);
+    --max: 1560px;
+    --font-display: 'Manrope', system-ui, sans-serif;
+    --font-body: 'Manrope', system-ui, sans-serif;
+    --font-serif: 'Fraunces', 'Times New Roman', serif;
     --font-mono: 'JetBrains Mono', ui-monospace, monospace;
   }
 
@@ -42,1078 +42,1147 @@
     background: var(--bg);
     color: var(--text);
     font-family: var(--font-body);
-    line-height: 1.55;
+    line-height: 1.6;
     overflow-x: hidden;
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
+  /* Subtle film grain */
   .grain {
     position: fixed; inset: 0;
     pointer-events: none; z-index: 1000;
-    opacity: 0.06; mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.85'/></svg>");
-  }
-
-  body::before {
-    content: ""; position: fixed; inset: 0;
-    background-image:
-      linear-gradient(to right, var(--line) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--line) 1px, transparent 1px);
-    background-size: 90px 90px;
-    pointer-events: none; z-index: 0;
-    mask-image: radial-gradient(ellipse at center, black 30%, transparent 90%);
+    opacity: 0.045; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.85'/></svg>");
   }
 
   a { color: inherit; text-decoration: none; }
   button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
   img, svg { display: block; max-width: 100%; }
 
-  .mono { font-family: var(--font-mono); letter-spacing: 0.02em; }
-  .upper { text-transform: uppercase; letter-spacing: 0.14em; }
-
   .container {
     max-width: var(--max); margin: 0 auto;
     padding: 0 var(--pad);
-    position: relative; z-index: 1;
+    position: relative;
   }
 
-  /* Lightning bolt (used as accent throughout) */
-  .bolt {
-    width: 1em; height: 1em;
-    display: inline-block;
-    vertical-align: middle;
-    color: var(--yellow);
+  .mono {
+    font-family: var(--font-mono);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    color: var(--muted);
   }
 
-  /* ===== TOP NAV ===== */
+  /* ============================================================
+     TOP NAV — minimal, refined
+  ============================================================ */
   .topnav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     gap: 2rem; align-items: center;
-    padding: 1rem var(--pad);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    background: rgba(7, 9, 26, 0.62);
+    padding: 1.4rem var(--pad);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    background: rgba(5, 5, 5, 0.55);
     border-bottom: 1px solid var(--line);
-    font-size: 0.72rem;
+    transition: padding 0.3s ease;
   }
+  .topnav.scrolled { padding: 0.9rem var(--pad); }
 
-  .mark { display: flex; align-items: center; gap: 0.75rem; }
-  .mark-glyph {
-    width: 38px; height: 38px;
-    border: 1.5px solid var(--text);
-    display: grid; place-items: center;
-    position: relative;
-    background: linear-gradient(135deg, transparent 50%, rgba(245,5,46,0.22) 50%);
-  }
-  .mark-glyph svg { width: 22px; height: 22px; }
-  .mark-glyph::after {
-    content: ""; position: absolute;
-    inset: -4px; border: 1px dashed var(--line-strong);
-    pointer-events: none;
-  }
-  .mark-meta { display: flex; flex-direction: column; line-height: 1.1; }
-  .mark-meta strong {
+  .mark {
+    display: flex; align-items: center; gap: 0.7rem;
     font-family: var(--font-display);
-    font-size: 1rem; letter-spacing: 0.06em;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    font-size: 0.75rem;
+    text-transform: uppercase;
   }
-  .mark-meta span { color: var(--muted); font-size: 0.65rem; }
+  .mark .bolt-mark {
+    width: 14px; height: 18px;
+    color: var(--red);
+  }
 
   .menu {
-    display: flex; gap: 1.5rem;
-    text-transform: uppercase; letter-spacing: 0.18em;
-    font-size: 0.7rem; font-weight: 500;
+    display: flex; gap: 2.4rem;
+    font-size: 0.74rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--text-2);
   }
   .menu a {
-    position: relative; padding: 0.5rem 0;
-    transition: color 0.2s;
+    position: relative;
+    padding: 0.4rem 0;
+    transition: color 0.25s;
   }
   .menu a::before {
     content: attr(data-num);
-    color: var(--red); margin-right: 0.45rem;
-    font-family: var(--font-mono); font-size: 0.62rem;
-    opacity: 0.85;
-  }
-  .menu a:hover { color: var(--yellow); }
-
-  .status {
-    display: flex; align-items: center; justify-content: flex-end;
-    gap: 0.6rem; color: var(--muted);
-    text-transform: uppercase; letter-spacing: 0.16em;
-    font-family: var(--font-mono); font-size: 0.66rem;
-  }
-  .dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--red);
-    box-shadow: 0 0 0 0 var(--red);
-    animation: pulse 1.6s infinite;
-  }
-  @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(245, 5, 46, 0.6); }
-    70% { box-shadow: 0 0 0 9px rgba(245, 5, 46, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(245, 5, 46, 0); }
-  }
-
-  /* ===== HERO ===== */
-  .hero {
-    position: relative;
-    min-height: 100vh;
-    padding: 7rem var(--pad) 0;
-    display: flex; flex-direction: column;
-    overflow: hidden; isolation: isolate;
-  }
-
-  .hero-meta {
-    display: flex; justify-content: space-between; align-items: flex-end;
-    text-transform: uppercase; letter-spacing: 0.16em;
-    font-family: var(--font-mono); font-size: 0.7rem;
-    color: var(--muted);
-    padding-bottom: 0.6rem;
-    border-bottom: 1px solid var(--line);
-    flex-wrap: wrap; gap: 1rem;
-  }
-  .hero-meta strong { color: var(--text); margin-right: 0.5rem; }
-  .hero-meta .red { color: var(--red); }
-  .hero-meta .ylw { color: var(--yellow); }
-
-  /* Race start lights */
-  .lights {
-    display: flex; gap: 0.4rem; align-items: center;
-    margin: 1.4rem 0 0.6rem;
-  }
-  .lights .lamp {
-    width: 18px; height: 18px; border-radius: 50%;
-    background: #1a1224;
-    border: 1px solid #3a2c2c;
-    transition: all 0.3s;
-  }
-  .lights .lamp.on {
-    background: var(--red);
-    box-shadow: 0 0 14px var(--red), 0 0 30px rgba(245,5,46,0.4);
-    border-color: var(--red);
-  }
-  .lights .label {
-    margin-left: 1rem;
-    font-family: var(--font-mono); font-size: 0.7rem;
-    color: var(--muted);
-    text-transform: uppercase; letter-spacing: 0.18em;
-  }
-
-  .hero-title {
-    margin-top: 1.5rem;
-    font-family: var(--font-display);
-    font-size: clamp(5rem, 18vw, 17.5rem);
-    line-height: 0.84;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
-    position: relative;
-  }
-  .hero-title .line {
-    display: block;
-    transform: translateY(110%);
-    opacity: 0;
-    animation: rise 1.1s cubic-bezier(.2,.8,.2,1) 0.4s forwards;
-  }
-  .hero-title .line:nth-child(2) {
-    animation-delay: 0.55s;
-    color: transparent;
-    -webkit-text-stroke: 1.5px var(--text);
-  }
-  @keyframes rise { to { transform: translateY(0); opacity: 1; } }
-
-  /* Big lightning bolt floating in hero */
-  .hero-bolt {
-    position: absolute;
-    right: -2vw; top: 18%;
-    width: 22vw; max-width: 320px; min-width: 140px;
-    color: var(--yellow);
-    opacity: 0.18;
-    z-index: -1;
-    transform: rotate(8deg);
-    filter: drop-shadow(0 0 30px rgba(231,185,34,0.4));
-    animation: boltDrift 7s ease-in-out infinite alternate;
-  }
-  @keyframes boltDrift {
-    from { transform: rotate(8deg) translateY(0); opacity: 0.18; }
-    to { transform: rotate(10deg) translateY(-12px); opacity: 0.24; }
-  }
-
-  .hero-foot {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 2.5rem; align-items: end;
-    padding: 2rem 0 1.4rem;
-    border-top: 1px solid var(--line);
-    margin-top: 1.5rem;
-  }
-  .dim { display: flex; flex-direction: column; font-family: var(--font-mono); line-height: 1.2; }
-  .dim .big {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    letter-spacing: 0.04em;
-    color: var(--text);
-  }
-  .dim .big.red { color: var(--red); }
-  .dim .small {
-    font-size: 0.66rem; color: var(--muted);
-    text-transform: uppercase; letter-spacing: 0.18em;
-    margin-top: 0.3rem;
-  }
-
-  .hero-words {
-    max-width: 30rem;
-    color: var(--muted);
-    font-size: clamp(0.95rem, 1.1vw, 1.05rem);
-    line-height: 1.5;
-  }
-  .hero-words em {
-    font-style: normal; color: var(--text);
-    border-bottom: 1px solid var(--red);
-  }
-
-  /* Vertical side label */
-  .side-label {
-    position: absolute;
-    left: calc(var(--pad) - 0.4rem); top: 50%;
-    transform: rotate(-90deg) translateX(50%);
-    transform-origin: left center;
-    font-family: var(--font-mono); font-size: 0.62rem;
-    color: var(--muted);
-    text-transform: uppercase; letter-spacing: 0.4em;
-    white-space: nowrap;
-  }
-
-  /* Ticker */
-  .ticker {
-    margin-top: auto;
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    padding: 0.9rem 0;
-    overflow: hidden; position: relative;
-    background: linear-gradient(180deg, transparent, rgba(245,5,46,0.04));
-  }
-  .ticker-track {
-    display: flex; gap: 3rem;
-    width: max-content;
-    animation: ticker 50s linear infinite;
-    font-family: var(--font-mono); font-size: 0.78rem;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    align-items: center;
-  }
-  .ticker-track span {
-    color: var(--text);
-    display: inline-flex; align-items: center; gap: 0.9rem;
-  }
-  .ticker-track span::before {
-    content: "▲"; color: var(--red); font-size: 0.7em;
-  }
-  .ticker-track span.ylw::before { color: var(--yellow); }
-  @keyframes ticker {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-
-  /* ===== SECTIONS ===== */
-  section { padding: clamp(5rem, 11vh, 9rem) 0; position: relative; }
-
-  .section-head {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1.4rem 2.8rem;
-    align-items: end;
-    padding-bottom: 2.4rem;
-    border-bottom: 1px solid var(--line);
-    margin-bottom: 3rem;
-  }
-  .section-num {
-    font-family: var(--font-display);
-    font-size: clamp(4rem, 9vw, 8rem);
-    line-height: 0.85;
-    color: var(--red);
-    letter-spacing: 0.02em;
-  }
-  .section-num span {
-    color: transparent; -webkit-text-stroke: 1.2px var(--text);
-  }
-  .section-title {
-    font-family: var(--font-display);
-    font-size: clamp(2.3rem, 4.6vw, 4.6rem);
-    text-transform: uppercase; letter-spacing: 0.01em;
-    line-height: 0.95;
-  }
-  .section-kicker {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    text-transform: uppercase; letter-spacing: 0.22em;
-    color: var(--muted);
-    grid-column: 2;
-    margin-bottom: 0.4rem;
-  }
-
-  /* ===== MANIFESTO ===== */
-  .manifesto-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: clamp(2rem, 6vw, 6rem);
-    align-items: start;
-  }
-  .manifesto p.lede {
-    font-size: clamp(1.4rem, 2.2vw, 1.95rem);
-    line-height: 1.3;
-    color: var(--text);
-    letter-spacing: -0.01em;
-  }
-  .manifesto p.lede em {
-    font-style: italic;
-    color: var(--red);
-    font-family: 'Archivo', serif;
-  }
-  .manifesto-side {
-    display: flex; flex-direction: column; gap: 2rem;
-    border-left: 1px solid var(--line);
-    padding-left: clamp(1rem, 3vw, 2.5rem);
-  }
-  .manifesto-side h4 {
-    font-family: var(--font-mono);
-    font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--yellow);
-    margin-bottom: 0.5rem;
-  }
-  .manifesto-side p { color: var(--muted); font-size: 0.95rem; }
-
-  .pull {
-    margin-top: 4rem;
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    padding: 2rem 0;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 2rem; align-items: center;
-  }
-  .pull blockquote {
-    font-family: var(--font-display);
-    font-size: clamp(1.6rem, 3.3vw, 3.1rem);
-    line-height: 1;
-    text-transform: uppercase;
-    letter-spacing: 0.005em;
-  }
-  .pull blockquote .red { color: var(--red); }
-  .pull blockquote .ylw { color: var(--yellow); }
-  .pull .pull-meta {
-    font-family: var(--font-mono); font-size: 0.66rem;
-    color: var(--muted); text-transform: uppercase; letter-spacing: 0.2em;
-    text-align: right;
-  }
-
-  /* ===== MACHINE ===== */
-  .machine {
-    background: radial-gradient(ellipse at top right, rgba(245,5,46,0.06), transparent 50%), var(--bg);
-  }
-  .machine-grid {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: clamp(2rem, 5vw, 5rem);
-    align-items: start;
-  }
-  .blueprint {
-    position: relative;
-    border: 1px solid var(--line-strong);
-    padding: 2rem;
-    background:
-      linear-gradient(135deg, rgba(245,5,46,0.02), transparent 60%),
-      var(--bg-2);
-    aspect-ratio: 16/10; overflow: hidden;
-  }
-  .blueprint::before {
-    content: ""; position: absolute; inset: 0;
-    background-image:
-      linear-gradient(to right, rgba(242,238,229,0.04) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(242,238,229,0.04) 1px, transparent 1px);
-    background-size: 40px 40px;
-    pointer-events: none;
-  }
-  .blueprint .corners {
-    position: absolute; inset: 8px;
-    pointer-events: none;
-  }
-  .blueprint .corners::before,
-  .blueprint .corners::after {
-    content: ""; position: absolute;
-    width: 18px; height: 18px;
-    border: 1px solid var(--red);
-  }
-  .blueprint .corners::before { top: 0; left: 0; border-right: none; border-bottom: none; }
-  .blueprint .corners::after { bottom: 0; right: 0; border-left: none; border-top: none; }
-  .blueprint .car-svg { position: relative; width: 100%; height: 100%; }
-  .blueprint-meta {
-    position: absolute; bottom: 1rem; left: 1rem; right: 1rem;
-    display: flex; justify-content: space-between;
-    font-family: var(--font-mono); font-size: 0.62rem;
-    color: var(--muted);
-    text-transform: uppercase; letter-spacing: 0.22em;
-    pointer-events: none;
-  }
-  .blueprint-meta b { color: var(--red); font-weight: 700; }
-  .blueprint-meta .ylw { color: var(--yellow); }
-
-  .specs {
-    display: flex; flex-direction: column;
-    border: 1px solid var(--line);
-  }
-  .spec-row {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 1rem;
-    padding: 0.95rem 1.2rem;
-    border-bottom: 1px solid var(--line);
-    align-items: baseline;
-    transition: background 0.2s, padding-left 0.3s;
-  }
-  .spec-row:last-child { border-bottom: none; }
-  .spec-row:hover { background: rgba(245,5,46,0.04); padding-left: 1.6rem; }
-  .spec-row .key {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
-  }
-  .spec-row .key::before {
-    content: attr(data-i) "·";
     color: var(--red);
     margin-right: 0.5rem;
-  }
-  .spec-row .dots {
-    border-bottom: 1px dashed var(--line-strong);
-    height: 1px; align-self: end; margin-bottom: 0.4rem;
-  }
-  .spec-row .val {
-    font-family: var(--font-display);
-    font-size: 1.35rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--text);
-  }
-  .spec-row .val small {
-    font-family: var(--font-mono); font-size: 0.62rem;
-    color: var(--muted);
-    margin-left: 0.2rem; letter-spacing: 0.18em;
-  }
-
-  /* INNOVATIONS */
-  .innov {
-    margin-top: 4rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-  }
-  .innov-card {
-    background: var(--bg);
-    padding: 1.5rem 1.4rem;
-    transition: background 0.3s, color 0.3s;
-    position: relative;
-    min-height: 230px;
-    display: flex; flex-direction: column; justify-content: space-between;
-    overflow: hidden;
-  }
-  .innov-card:hover { background: var(--bg-2); }
-  .innov-card .innov-num {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    color: var(--yellow);
-    text-transform: uppercase;
-    letter-spacing: 0.22em;
-  }
-  .innov-card h4 {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    line-height: 1.05;
-    margin-top: 0.6rem;
-  }
-  .innov-card p {
-    color: var(--muted);
-    font-size: 0.83rem;
-    line-height: 1.5;
-    margin-top: 0.7rem;
-  }
-  .innov-card .tag {
-    margin-top: 0.9rem;
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    color: var(--red);
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-  }
-
-  /* INSPIRATIONS strip */
-  .inspirations {
-    margin-top: 3rem;
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    padding: 2rem 0;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 2.5rem;
-    align-items: center;
-  }
-  .inspirations h5 {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    color: var(--yellow);
-    text-transform: uppercase;
-    letter-spacing: 0.22em;
-  }
-  .inspirations h5 small {
-    display: block;
-    font-family: var(--font-display);
-    font-size: 1.4rem;
-    color: var(--text);
-    letter-spacing: 0.02em;
-    margin-top: 0.3rem;
-    line-height: 1.05;
-  }
-  .insp-row {
-    display: flex; gap: 2rem;
-    overflow-x: auto; padding-bottom: 0.5rem;
-  }
-  .insp-row::-webkit-scrollbar { height: 4px; }
-  .insp-row::-webkit-scrollbar-thumb { background: var(--line-strong); }
-  .insp {
-    flex-shrink: 0;
-    min-width: 200px;
-    border-left: 1px solid var(--line);
-    padding-left: 1rem;
-  }
-  .insp .from {
     font-family: var(--font-mono);
     font-size: 0.62rem;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-  }
-  .insp .what {
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    margin-top: 0.3rem;
-    color: var(--text);
-  }
-  .insp .why {
-    font-size: 0.78rem;
-    color: var(--muted);
-    margin-top: 0.4rem;
-    line-height: 1.45;
-  }
-
-  /* ===== PERFORMANCE BAND ===== */
-  .perf {
-    background: var(--text); color: var(--bg);
-    padding: clamp(3rem, 7vw, 6rem) 0;
-    position: relative; overflow: hidden;
-  }
-  .perf::before {
-    content: "";
-    position: absolute; inset: 0;
-    background: repeating-linear-gradient(135deg,
-      transparent 0, transparent 22px,
-      rgba(7,9,26,0.05) 22px, rgba(7,9,26,0.05) 44px);
-    pointer-events: none;
-  }
-  .perf-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: rgba(7,9,26,0.10);
-    border-top: 1px solid rgba(7,9,26,0.10);
-    border-bottom: 1px solid rgba(7,9,26,0.10);
-  }
-  .perf-cell {
-    background: var(--text);
-    padding: 2rem 1.5rem;
-    display: flex; flex-direction: column; gap: 0.6rem;
-    position: relative;
-  }
-  .perf-cell .pk {
-    font-family: var(--font-mono);
-    font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.22em;
-    color: rgba(7,9,26,0.55);
-  }
-  .perf-cell .pv {
-    font-family: var(--font-display);
-    font-size: clamp(2.6rem, 5.5vw, 5.6rem);
-    line-height: 0.9; letter-spacing: 0.01em;
-  }
-  .perf-cell .pu {
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    color: var(--red);
-    text-transform: uppercase; letter-spacing: 0.18em;
-  }
-  .perf-cell::before {
-    content: attr(data-i);
-    position: absolute; top: 0.7rem; right: 1rem;
-    font-family: var(--font-mono); font-size: 0.62rem;
-    color: rgba(7,9,26,0.4);
-  }
-  .perf-foot {
-    display: flex; justify-content: space-between;
-    margin-top: 1.6rem;
-    font-family: var(--font-mono); font-size: 0.7rem;
-    color: rgba(7,9,26,0.6);
-    text-transform: uppercase; letter-spacing: 0.18em;
-    flex-wrap: wrap; gap: 0.6rem;
-  }
-
-  /* ===== CREW ===== */
-  .crew-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-  }
-  .crew-card {
-    background: var(--bg);
-    padding: 1.6rem 1.4rem 1.4rem;
-    position: relative;
-    transition: background 0.3s, color 0.3s;
-    overflow: hidden;
-    aspect-ratio: 4/5;
-    display: flex; flex-direction: column;
-    justify-content: space-between;
-  }
-  .crew-card:hover { background: var(--red); color: var(--text); }
-  .crew-card:hover .crew-num { color: var(--text); border-color: var(--text); }
-  .crew-card:hover .crew-role { color: var(--yellow); }
-  .crew-card:hover .crew-portrait { opacity: 1; transform: scale(1.04); }
-  .crew-card:hover .crew-bio { color: var(--text); opacity: 0.9; }
-
-  .crew-top {
-    display: flex; justify-content: space-between; align-items: flex-start;
-    gap: 1rem;
-  }
-  .crew-num {
-    font-family: var(--font-display); font-size: 1.5rem;
-    line-height: 1;
-    border: 1px solid var(--line-strong);
-    padding: 0.4rem 0.7rem 0.2rem;
-    color: var(--muted);
-    transition: color 0.2s, border-color 0.2s;
-  }
-  .crew-portrait {
-    width: 58%;
-    aspect-ratio: 1/1.15;
-    margin: 1.2rem auto 0;
-    background: var(--bg-2);
-    border: 1px solid var(--line);
-    position: relative;
-    transition: opacity 0.4s, transform 0.4s;
     opacity: 0.85;
   }
-  .crew-portrait::before {
-    content: ""; position: absolute; inset: 8px;
-    background:
-      radial-gradient(circle at 50% 38%, rgba(242,238,229,0.18), transparent 36%),
-      linear-gradient(180deg, rgba(245,5,46,0.10) 0%, transparent 60%, rgba(0,0,0,0.4));
+  .menu a:hover { color: var(--text); }
+  .menu a::after {
+    content: ""; position: absolute;
+    left: 0; right: 0; bottom: -2px;
+    height: 1px; background: var(--text);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s ease;
   }
-  .crew-portrait::after {
-    content: attr(data-init);
-    position: absolute; inset: 0;
-    display: grid; place-items: center;
-    font-family: var(--font-display); font-size: 3.2rem;
-    color: rgba(242,238,229,0.78);
-    letter-spacing: 0.04em;
-    mix-blend-mode: overlay;
-  }
-  .crew-bottom { margin-top: auto; }
-  .crew-role {
-    font-family: var(--font-mono);
-    font-size: 0.62rem; color: var(--red);
-    text-transform: uppercase; letter-spacing: 0.18em;
-    margin-bottom: 0.45rem;
-    transition: color 0.2s;
-  }
-  .crew-name {
-    font-family: var(--font-display);
-    font-size: 1.55rem; line-height: 1.05;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-  }
-  .crew-bio {
-    margin-top: 0.55rem;
-    font-size: 0.78rem; color: var(--muted);
-    line-height: 1.45;
-    transition: color 0.2s, opacity 0.2s;
-  }
+  .menu a:hover::after { transform: scaleX(1); }
 
-  /* MENTORS row */
-  .mentors {
-    margin-top: 2.5rem;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 2rem; align-items: start;
-    border-top: 1px solid var(--line);
-    padding-top: 1.5rem;
-  }
-  .mentors h5 {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    color: var(--yellow);
-    text-transform: uppercase;
-    letter-spacing: 0.22em;
-  }
-  .mentors h5 small {
-    display: block;
-    font-family: var(--font-display);
-    font-size: 1.2rem;
-    color: var(--text);
-    letter-spacing: 0.02em;
-    margin-top: 0.3rem;
-  }
-  .mentor-list {
-    display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem;
-  }
-  .mentor-list span {
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    color: var(--text);
-    border-left: 2px solid var(--red);
-    padding-left: 0.7rem;
-    line-height: 1.2;
-  }
-  .mentor-list span small { color: var(--muted); display: block; font-size: 0.65rem; margin-top: 0.2rem; }
-
-  /* ===== RACE LOG ===== */
-  .log-wrap {
-    display: grid;
-    grid-template-columns: 1fr 2.2fr;
-    gap: clamp(2rem, 5vw, 4rem);
-    align-items: start;
-  }
-  .log-side p { color: var(--muted); font-size: 0.95rem; }
-  .log-side .badge {
-    display: inline-block;
-    margin-top: 1.5rem;
-    border: 1px solid var(--red);
-    padding: 0.5rem 1rem;
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    color: var(--red);
-    text-transform: uppercase; letter-spacing: 0.22em;
-  }
-
-  .timeline {
-    position: relative;
-    border-left: 1px solid var(--line-strong);
-    padding-left: 2rem;
-    list-style: none;
-  }
-  .ev {
-    position: relative;
-    padding: 1rem 0 2.3rem;
-    border-bottom: 1px solid var(--line);
-  }
-  .ev:last-child { border-bottom: none; }
-  .ev::before {
-    content: "";
-    position: absolute; left: -2.4rem; top: 1.4rem;
-    width: 12px; height: 12px;
-    background: var(--bg);
-    border: 2px solid var(--red);
-    transform: rotate(45deg);
-  }
-  .ev.peak::before {
-    background: var(--red);
-    box-shadow: 0 0 0 4px rgba(245,5,46,0.18);
-  }
-  .ev.peak .ev-title { color: var(--yellow); }
-  .ev .ev-date {
-    font-family: var(--font-mono); font-size: 0.7rem;
-    color: var(--red);
-    text-transform: uppercase; letter-spacing: 0.18em;
-    margin-bottom: 0.4rem;
-  }
-  .ev .ev-title {
-    font-family: var(--font-display);
-    font-size: clamp(1.4rem, 2.4vw, 2rem);
-    text-transform: uppercase; letter-spacing: 0.01em;
-    line-height: 1.05;
-  }
-  .ev .ev-body {
-    margin-top: 0.5rem;
-    color: var(--muted);
-    max-width: 50ch;
-    font-size: 0.92rem;
-  }
-  .ev .ev-stat {
-    display: inline-flex; gap: 0.6rem; margin-top: 0.7rem;
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    color: var(--text);
-    border: 1px solid var(--line);
-    padding: 0.3rem 0.6rem;
-    text-transform: uppercase; letter-spacing: 0.16em;
-  }
-  .ev .ev-stat strong { color: var(--red); }
-
-  /* SUSTAINABILITY STRIP */
-  .sustain {
-    margin-top: 3rem;
-    border: 1px solid var(--line);
-    padding: 2rem;
-    background:
-      linear-gradient(135deg, rgba(20,140,75,0.05), transparent 70%),
-      var(--bg-2);
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 2rem; align-items: center;
-    position: relative;
-  }
-  .sustain h4 {
-    font-family: var(--font-display);
-    font-size: clamp(1.4rem, 2.2vw, 2rem);
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    color: var(--yellow);
-    line-height: 1.05;
-  }
-  .sustain h4 .leaf {
-    display: inline-block;
-    color: #2BC07A;
-    margin-right: 0.4rem;
-  }
-  .sustain h4 small {
-    display: block;
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.22em;
-    margin-top: 0.4rem;
-    font-weight: 400;
-  }
-  .sdg-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-  .sdg {
-    border-left: 2px solid #2BC07A;
-    padding-left: 0.9rem;
-  }
-  .sdg .num {
-    font-family: var(--font-display);
-    font-size: 1.4rem;
-    color: var(--text);
-    line-height: 1;
-  }
-  .sdg .lbl {
+  .topnav-right {
+    display: flex; justify-content: flex-end; align-items: center;
+    gap: 1.4rem;
     font-family: var(--font-mono);
     font-size: 0.66rem;
     color: var(--muted);
     text-transform: uppercase;
     letter-spacing: 0.18em;
+  }
+  .lang {
+    display: flex; gap: 0.5rem;
+  }
+  .lang a {
+    padding: 0.2rem 0.4rem;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+  .lang a.on { color: var(--text); border-bottom: 1px solid var(--red); }
+  .lang a:hover { color: var(--text); }
+
+  /* ============================================================
+     HERO
+  ============================================================ */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    padding: 9rem var(--pad) 3rem;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  /* Cinematic backdrop (gradient + grid) */
+  .hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 75% 30%, rgba(245,5,46,0.10), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 20% 70%, rgba(231,185,34,0.04), transparent 60%),
+      linear-gradient(180deg, rgba(5,5,5,0.5), var(--bg));
+    z-index: -2;
+  }
+  .hero::after {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(to right, var(--line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+    background-size: 120px 120px;
+    mask-image: radial-gradient(ellipse at center, black 40%, transparent 90%);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .hero-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 2rem; flex-wrap: wrap;
+  }
+  .hero-top .label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    line-height: 1.6;
+  }
+  .hero-top .label strong { color: var(--text); margin-right: 0.5rem; }
+  .hero-top .label .red { color: var(--red); }
+
+  .hero-center {
+    display: grid; align-content: center;
+    padding: 4rem 0;
+  }
+  .hero-title {
+    font-family: var(--font-display);
+    font-weight: 200;
+    font-size: clamp(4rem, 16vw, 19rem);
+    line-height: 0.88;
+    letter-spacing: -0.045em;
+    text-transform: lowercase;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+  .hero-title .stroke {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text);
+  }
+  .hero-title .red { color: var(--red); }
+
+  /* Fade-in word-by-word */
+  .hero-title .w {
+    display: inline-block;
+    transform: translateY(0.4em);
+    opacity: 0;
+    animation: rise 1.4s cubic-bezier(.18,.7,.2,1) forwards;
+  }
+  .hero-title .w:nth-child(1) { animation-delay: 0.2s; }
+  .hero-title .w:nth-child(2) { animation-delay: 0.45s; }
+  .hero-title .w:nth-child(3) { animation-delay: 0.7s; }
+  @keyframes rise { to { transform: none; opacity: 1; } }
+
+  .hero-tag {
+    margin-top: 1.5rem;
+    max-width: 32ch;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.3rem, 2.4vw, 2.2rem);
+    line-height: 1.25;
+    color: var(--text-2);
+    letter-spacing: -0.01em;
+    opacity: 0;
+    animation: fade 1.6s 1.1s forwards;
+  }
+  @keyframes fade { to { opacity: 1; } }
+
+  .hero-bottom {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 2.5rem;
+    align-items: end;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+    opacity: 0;
+    animation: fade 1.4s 1.4s forwards;
+  }
+  .hero-bottom .col {
+    display: flex; flex-direction: column;
+    gap: 0.4rem;
+  }
+  .hero-bottom .col .k {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+  }
+  .hero-bottom .col .v {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 1.4rem;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+  .hero-bottom .col .v.red { color: var(--red); }
+
+  .scroll-cue {
+    display: inline-flex; flex-direction: column; align-items: center;
+    gap: 0.4rem;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+  }
+  .scroll-cue .arrow {
+    width: 1px; height: 38px;
+    background: linear-gradient(180deg, transparent, var(--text-2));
+    animation: drop 1.8s ease-in-out infinite;
+  }
+  @keyframes drop {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  /* ============================================================
+     CHAPTER HEADER
+  ============================================================ */
+  .chapter {
+    padding: clamp(6rem, 12vh, 10rem) 0;
+    position: relative;
+  }
+  .chapter-head {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem 4rem;
+    align-items: end;
+    margin-bottom: 4rem;
+    padding-bottom: 2.4rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .chapter-num {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    align-self: start;
+    padding-top: 1.4rem;
+  }
+  .chapter-title {
+    font-family: var(--font-display);
+    font-weight: 200;
+    font-size: clamp(2.6rem, 6.5vw, 6.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    text-transform: lowercase;
+    color: var(--text);
+  }
+  .chapter-sub {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
+    color: var(--text-2);
+    margin-top: 1rem;
+    max-width: 50ch;
+  }
+
+  /* ============================================================
+     01 — THE DRIVERS
+  ============================================================ */
+  .drivers {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.4rem;
+  }
+  .driver {
+    display: flex; flex-direction: column;
+    gap: 1rem;
+    cursor: pointer;
+    transition: transform 0.5s cubic-bezier(.2,.8,.2,1);
+  }
+  .driver:hover { transform: translateY(-4px); }
+  .driver-photo {
+    aspect-ratio: 3/4;
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+  .driver:hover .driver-photo { border-color: var(--red); }
+  .driver-photo::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 35%, rgba(248,244,237,0.18), transparent 50%),
+      linear-gradient(180deg, rgba(245,5,46,0.10) 0%, transparent 60%, rgba(0,0,0,0.6) 100%);
+  }
+  .driver-photo::after {
+    content: attr(data-init);
+    position: absolute; inset: 0;
+    display: grid; place-items: center;
+    font-family: var(--font-display);
+    font-weight: 200;
+    font-size: clamp(3rem, 6vw, 6rem);
+    color: rgba(248,244,237,0.85);
+    letter-spacing: -0.04em;
+  }
+  .driver-photo .num {
+    position: absolute; top: 0.9rem; left: 0.9rem;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    color: var(--text);
+    letter-spacing: 0.22em;
+    z-index: 2;
+  }
+  .driver-photo .role {
+    position: absolute; bottom: 0.9rem; left: 0.9rem; right: 0.9rem;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    color: var(--text);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    z-index: 2;
+    opacity: 0.85;
+  }
+  .driver-name {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+  .driver-bio {
+    font-size: 0.85rem;
+    color: var(--text-2);
+    line-height: 1.5;
+    max-width: 32ch;
+  }
+  .driver-skill {
+    margin-top: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+  }
+
+  /* Mentors row */
+  .mentors {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--line);
+  }
+  .mentors h4 {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin-bottom: 0.6rem;
+  }
+  .mentors h4 + p {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 1.4rem;
+    color: var(--text);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+  .mentors-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem 2rem;
+  }
+  .mentors-list span {
+    color: var(--text-2);
+    font-size: 0.92rem;
+    border-left: 1px solid var(--red);
+    padding-left: 1rem;
+    line-height: 1.3;
+  }
+  .mentors-list span small {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
     margin-top: 0.3rem;
   }
-  .sdg .desc {
-    font-size: 0.82rem;
+
+  /* ============================================================
+     02 — THE BEGINNINGS
+  ============================================================ */
+  .beginnings {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .beginnings-text p {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(1.2rem, 1.7vw, 1.55rem);
+    line-height: 1.45;
     color: var(--text);
-    margin-top: 0.45rem;
+    letter-spacing: -0.005em;
+    margin-bottom: 1.6rem;
+  }
+  .beginnings-text p em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--red);
+  }
+  .beginnings-img {
+    aspect-ratio: 4/5;
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+  }
+  .beginnings-img::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 60%, rgba(245,5,46,0.12), transparent 60%),
+      radial-gradient(ellipse at 80% 30%, rgba(231,185,34,0.06), transparent 60%);
+  }
+  .beginnings-img .frame-label {
+    position: absolute; bottom: 1.4rem; left: 1.4rem; right: 1.4rem;
+    display: flex; justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    color: var(--text);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+  .beginnings-img .frame-label .red { color: var(--red); }
+  .beginnings-img .crosshair {
+    position: absolute;
+    width: 28px; height: 28px;
+    border-color: rgba(245,5,46,0.5);
+    border-style: solid;
+    border-width: 0;
+  }
+  .beginnings-img .crosshair.tl { top: 14px; left: 14px; border-top-width: 1px; border-left-width: 1px; }
+  .beginnings-img .crosshair.br { bottom: 14px; right: 14px; border-bottom-width: 1px; border-right-width: 1px; }
+
+  /* Pull quote */
+  .pull-quote {
+    margin-top: 6rem;
+    text-align: center;
+    padding: 3rem 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .pull-quote .mono { display: block; margin-bottom: 1.5rem; color: var(--red); }
+  .pull-quote blockquote {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.8rem, 4.5vw, 4.2rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    max-width: 22ch;
+    margin: 0 auto;
+  }
+  .pull-quote blockquote em {
+    font-style: normal;
+    color: var(--red);
+  }
+  .pull-quote .src {
+    margin-top: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  /* ============================================================
+     03 — DASHER (THE MACHINE)
+  ============================================================ */
+  .machine-stage {
+    background: var(--bg);
+    padding: 4rem 0;
+    border: 1px solid var(--line);
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 4rem;
+  }
+  .machine-stage::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 50% 60% at 50% 50%, rgba(245,5,46,0.10), transparent 70%);
+    pointer-events: none;
+  }
+  .machine-stage::after {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(to right, var(--line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .machine-stage svg.car {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .machine-frame-meta {
+    display: flex; justify-content: space-between;
+    margin-top: 1.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+  .machine-frame-meta b { color: var(--red); }
+  .machine-frame-meta .ylw { color: var(--yellow); }
+
+  .specs-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .spec {
+    padding: 1.6rem 1.2rem;
+    border-right: 1px solid var(--line);
+    transition: background 0.3s;
+  }
+  .spec:last-child { border-right: none; }
+  .spec:hover { background: var(--bg-2); }
+  .spec .k {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+  }
+  .spec .v {
+    font-family: var(--font-display);
+    font-weight: 200;
+    font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+    line-height: 1.1;
+    color: var(--text);
+    letter-spacing: -0.015em;
+    margin-top: 0.5rem;
+  }
+  .spec .v small {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--muted);
+    margin-left: 0.3rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .spec .v.red { color: var(--red); }
+
+  /* ============================================================
+     04 — THE INNOVATIONS (horizontal scroll gallery)
+  ============================================================ */
+  .innov-rail-wrap {
+    position: relative;
+    margin: 0 calc(var(--pad) * -1);
+    padding: 0 var(--pad);
+  }
+  .innov-rail {
+    display: flex; gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    padding-bottom: 1rem;
+  }
+  .innov-rail::-webkit-scrollbar { height: 4px; }
+  .innov-rail::-webkit-scrollbar-track { background: transparent; }
+  .innov-rail::-webkit-scrollbar-thumb { background: var(--line-strong); }
+  .innov {
+    flex: 0 0 min(420px, 80vw);
+    aspect-ratio: 3/4;
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    padding: 2rem;
+    position: relative;
+    scroll-snap-align: start;
+    transition: border-color 0.3s, transform 0.3s;
+    display: flex; flex-direction: column; justify-content: space-between;
+    overflow: hidden;
+  }
+  .innov:hover { border-color: var(--red); transform: translateY(-3px); }
+  .innov::before {
+    content: "";
+    position: absolute; top: 0; right: 0;
+    width: 60%; height: 60%;
+    background:
+      radial-gradient(ellipse at top right, rgba(245,5,46,0.10), transparent 70%);
+    pointer-events: none;
+  }
+  .innov .num {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--red);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+  .innov h3 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(1.7rem, 2.4vw, 2.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-top: 1rem;
+  }
+  .innov p {
+    color: var(--text-2);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-top: 1rem;
+    max-width: 36ch;
+  }
+  .innov .tag {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--text);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .innov .tag span { color: var(--red); }
+
+  .rail-cue {
+    margin-top: 1.4rem;
+    display: flex; justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+  }
+
+  /* Inspirations sub-section */
+  .inspirations {
+    margin-top: 6rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--line);
+  }
+  .inspirations h4 {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin-bottom: 1.4rem;
+  }
+  .insp-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .insp {
+    background: var(--bg);
+    padding: 1.6rem 1.2rem;
+    transition: background 0.3s;
+  }
+  .insp:hover { background: var(--bg-2); }
+  .insp .from {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+  }
+  .insp .what {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 1.05rem;
+    line-height: 1.2;
+    margin-top: 0.5rem;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+  .insp .why {
+    font-size: 0.78rem;
+    color: var(--text-2);
+    margin-top: 0.5rem;
     line-height: 1.4;
   }
 
-  /* ===== PARTNERS ===== */
-  .partners-grid {
+  /* ============================================================
+     05 — THE RACE (timeline)
+  ============================================================ */
+  .race-wrap {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: 1fr 2.4fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .race-side {
+    position: sticky; top: 8rem;
+  }
+  .race-side .lede {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 1.45rem;
+    line-height: 1.4;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+  .race-side .lede em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--red);
+  }
+  .race-side .summary {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+  }
+  .race-side .summary span {
+    display: flex; justify-content: space-between;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+  .race-side .summary span:last-child { border-bottom: none; }
+  .race-side .summary span b { color: var(--red); font-weight: 500; }
+
+  .timeline {
+    position: relative;
+    list-style: none;
+  }
+  .ev {
+    display: grid;
+    grid-template-columns: minmax(110px, 130px) 1fr;
+    gap: 2.5rem;
+    padding: 2rem 0 2.5rem;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+  .ev:last-child { border-bottom: none; }
+  .ev .ev-date {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    line-height: 1.3;
+  }
+  .ev .ev-date span {
+    display: block;
+    color: var(--red);
+    font-size: 0.62rem;
+    margin-top: 0.4rem;
+    letter-spacing: 0.3em;
+  }
+  .ev .ev-content {
+    border-left: 1px solid var(--line);
+    padding-left: 2rem;
+    position: relative;
+  }
+  .ev .ev-content::before {
+    content: "";
+    position: absolute; left: -4px; top: 1rem;
+    width: 7px; height: 7px;
+    background: var(--text);
+    transform: rotate(45deg);
+  }
+  .ev.peak .ev-content::before {
+    background: var(--red);
+    box-shadow: 0 0 0 4px rgba(245,5,46,0.18);
+  }
+  .ev .ev-title {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(1.4rem, 2.6vw, 2.2rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+  .ev.peak .ev-title { color: var(--text); }
+  .ev.peak .ev-title em { color: var(--red); font-style: normal; }
+  .ev .ev-body {
+    margin-top: 0.8rem;
+    color: var(--text-2);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 56ch;
+  }
+  .ev .ev-stat {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--line-strong);
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--text);
+  }
+  .ev .ev-stat b { color: var(--red); margin-right: 0.4rem; }
+
+  /* Sustainability inset */
+  .sustain {
+    margin-top: 5rem;
+    padding: 2.5rem;
+    border: 1px solid var(--line);
+    background:
+      radial-gradient(ellipse at 80% 20%, rgba(43, 192, 122, 0.08), transparent 50%),
+      var(--bg-2);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .sustain h4 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 1.7rem;
+    line-height: 1.1;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+  .sustain h4 small {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: #2BC07A;
+    margin-bottom: 0.6rem;
+    font-weight: 400;
+  }
+  .sdg-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem;
+  }
+  .sdg {
+    border-left: 2px solid #2BC07A;
+    padding-left: 1rem;
+  }
+  .sdg .num {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 1.4rem;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+  .sdg .lbl {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    margin-top: 0.3rem;
+  }
+  .sdg .desc {
+    font-size: 0.85rem;
+    color: var(--text-2);
+    margin-top: 0.5rem;
+    line-height: 1.45;
+  }
+
+  /* ============================================================
+     06 — PARTNERS
+  ============================================================ */
+  .partners-wall {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
     gap: 1px;
     background: var(--line);
     border: 1px solid var(--line);
   }
   .partner {
     background: var(--bg);
-    padding: 2rem 1rem;
-    aspect-ratio: 16/9;
-    display: grid; place-items: center;
+    padding: 2rem 1.2rem;
+    aspect-ratio: 4/3;
+    display: flex; flex-direction: column;
+    justify-content: space-between;
     transition: background 0.3s;
-    text-align: center;
     position: relative;
   }
   .partner:hover { background: var(--bg-2); }
-  .partner .name {
-    font-family: var(--font-display);
-    font-size: clamp(1.1rem, 1.5vw, 1.55rem);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--muted);
-    transition: color 0.2s, letter-spacing 0.3s;
-  }
-  .partner:hover .name { color: var(--text); letter-spacing: 0.08em; }
   .partner .tier {
-    position: absolute; top: 0.6rem; left: 0.7rem;
-    font-family: var(--font-mono); font-size: 0.6rem;
-    text-transform: uppercase; letter-spacing: 0.22em;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
   }
   .tier.diamond { color: var(--red); }
   .tier.gold { color: var(--yellow); }
   .tier.silver { color: var(--muted); }
-
-  .partners-cta {
-    margin-top: 2rem;
-    display: flex; justify-content: space-between; align-items: center;
-    gap: 1.5rem; flex-wrap: wrap;
-    border-top: 1px solid var(--line);
-    padding-top: 1.4rem;
-    color: var(--muted);
-    font-family: var(--font-mono); font-size: 0.74rem;
-    text-transform: uppercase; letter-spacing: 0.18em;
+  .partner .name {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(1rem, 1.3vw, 1.35rem);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: var(--text);
   }
-  .partners-cta a {
+
+  .partners-foot {
+    margin-top: 2rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+  }
+  .partners-foot a {
     color: var(--red);
     border-bottom: 1px solid var(--red);
     padding-bottom: 2px;
   }
 
-  /* ===== ENGAGE / CTA ===== */
+  /* ============================================================
+     07 — ENGAGE
+  ============================================================ */
   .engage {
-    background: var(--bg);
+    padding: clamp(7rem, 14vw, 12rem) 0;
     border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    padding: clamp(5rem, 11vw, 9rem) 0;
-    position: relative; overflow: hidden;
+    position: relative;
+    overflow: hidden;
   }
   .engage::before {
-    content: ""; position: absolute; inset: 0;
+    content: "";
+    position: absolute; inset: 0;
     background:
-      radial-gradient(circle at 80% 50%, rgba(245,5,46,0.16), transparent 45%),
-      radial-gradient(circle at 10% 30%, rgba(231,185,34,0.08), transparent 40%);
+      radial-gradient(ellipse 50% 60% at 70% 50%, rgba(245,5,46,0.10), transparent 60%);
     pointer-events: none;
   }
   .engage-inner {
     display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 3rem;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 5rem;
     align-items: end;
     position: relative;
   }
   .engage h2 {
     font-family: var(--font-display);
-    font-size: clamp(3rem, 9.5vw, 9.5rem);
+    font-weight: 200;
+    font-size: clamp(3rem, 11vw, 12rem);
     line-height: 0.85;
-    text-transform: uppercase; letter-spacing: 0.005em;
+    letter-spacing: -0.05em;
+    text-transform: lowercase;
+    color: var(--text);
   }
-  .engage h2 .out { -webkit-text-stroke: 1.5px var(--text); color: transparent; }
   .engage h2 .red { color: var(--red); }
-  .engage h2 .ylw { color: var(--yellow); }
+  .engage h2 .stroke {
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--text);
+  }
   .engage-body {
-    max-width: 36rem;
-    color: var(--muted);
-    margin-top: 1.4rem;
-    font-size: 1rem;
+    margin-top: 2rem;
+    max-width: 38rem;
+    color: var(--text-2);
+    font-size: 1.05rem;
+    line-height: 1.6;
   }
 
   .cta-stack {
-    display: flex; flex-direction: column; gap: 0.6rem; align-items: stretch;
-    min-width: min(300px, 80vw);
+    display: flex; flex-direction: column;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
   }
   .cta {
-    display: flex; align-items: center; justify-content: space-between;
+    background: var(--bg);
+    padding: 1.4rem 1.2rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
     gap: 1rem;
-    border: 1px solid var(--line-strong);
-    padding: 1rem 1.2rem;
-    transition: all 0.25s;
-    font-family: var(--font-mono); font-size: 0.78rem;
-    text-transform: uppercase; letter-spacing: 0.16em;
+    align-items: center;
+    transition: background 0.3s, padding 0.3s;
     cursor: pointer;
   }
-  .cta:hover {
-    background: var(--red);
+  .cta:hover { background: var(--red); padding-left: 1.6rem; }
+  .cta .label {
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    transition: color 0.3s;
+  }
+  .cta:hover .label { color: rgba(248,244,237,0.7); }
+  .cta .text {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 1.4rem;
     color: var(--text);
-    border-color: var(--red);
-    transform: translateX(-3px);
+    letter-spacing: -0.015em;
+    line-height: 1.15;
+    margin-top: 0.2rem;
   }
-  .cta .arr { font-family: var(--font-display); font-size: 1.2rem; }
-  .cta.primary {
-    background: var(--text);
-    color: var(--bg);
-    border-color: var(--text);
+  .cta .arr {
+    font-family: var(--font-display);
+    font-weight: 200;
+    font-size: 1.6rem;
+    color: var(--text-2);
+    transition: color 0.3s, transform 0.3s;
   }
-  .cta.primary:hover {
-    background: var(--red);
-    border-color: var(--red);
-    color: var(--text);
-  }
+  .cta:hover .arr { color: var(--text); transform: translateX(4px); }
 
-  /* ===== FOOTER ===== */
+  /* ============================================================
+     FOOTER
+  ============================================================ */
   footer {
-    background: var(--bg);
-    padding: 3rem 0 2.5rem;
+    padding: 4rem 0 3rem;
     border-top: 1px solid var(--line);
     position: relative;
-    z-index: 1;
   }
   .foot-inner {
     display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 3rem;
     align-items: start;
   }
   .foot-brand {
     font-family: var(--font-display);
-    font-size: 2.2rem; line-height: 0.9;
-    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 2.6rem;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    text-transform: lowercase;
+    color: var(--text);
   }
   .foot-brand small {
     display: block;
     font-family: var(--font-mono);
-    font-size: 0.7rem;
+    font-size: 0.66rem;
     color: var(--muted);
-    text-transform: uppercase; letter-spacing: 0.2em;
-    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    margin-top: 0.8rem;
+    text-transform: uppercase;
   }
   .foot-col h5 {
     font-family: var(--font-mono);
-    font-size: 0.7rem;
-    text-transform: uppercase; letter-spacing: 0.2em;
+    font-size: 0.66rem;
     color: var(--red);
-    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin-bottom: 1.2rem;
   }
-  .foot-col ul {
-    list-style: none;
-    display: flex; flex-direction: column; gap: 0.4rem;
-  }
+  .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
   .foot-col a, .foot-col li {
-    color: var(--muted);
-    font-size: 0.85rem;
+    color: var(--text-2);
+    font-size: 0.88rem;
     transition: color 0.2s;
   }
   .foot-col a:hover { color: var(--text); }
 
   .foot-bottom {
-    margin-top: 3rem;
-    padding-top: 1.4rem;
+    margin-top: 4rem;
+    padding-top: 1.5rem;
     border-top: 1px solid var(--line);
     display: flex; justify-content: space-between;
     gap: 1rem;
     font-family: var(--font-mono);
-    font-size: 0.7rem;
+    font-size: 0.66rem;
     color: var(--muted);
     text-transform: uppercase;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.22em;
     flex-wrap: wrap;
   }
 
-  /* ===== REVEAL ANIMATIONS ===== */
+  /* ============================================================
+     REVEAL
+  ============================================================ */
   .reveal {
-    opacity: 0; transform: translateY(28px);
-    transition: opacity 0.9s ease, transform 0.9s cubic-bezier(.2,.8,.2,1);
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 1.1s ease, transform 1.1s cubic-bezier(.18,.7,.2,1);
   }
   .reveal.in { opacity: 1; transform: none; }
   .reveal.d1 { transition-delay: 0.08s; }
@@ -1122,38 +1191,42 @@
   .reveal.d4 { transition-delay: 0.32s; }
   .reveal.d5 { transition-delay: 0.4s; }
 
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 980px) {
+  /* ============================================================
+     RESPONSIVE
+  ============================================================ */
+  @media (max-width: 1100px) {
+    .drivers { grid-template-columns: repeat(3, 1fr); }
+    .insp-grid { grid-template-columns: repeat(3, 1fr); }
+    .partners-wall { grid-template-columns: repeat(4, 1fr); }
+    .specs-grid { grid-template-columns: repeat(3, 1fr); }
+    .specs-grid .spec:nth-child(3) { border-right: none; }
+  }
+  @media (max-width: 900px) {
     .topnav { grid-template-columns: 1fr auto; }
     .menu { display: none; }
-    .hero-foot { grid-template-columns: 1fr; gap: 1.5rem; }
-    .manifesto-grid { grid-template-columns: 1fr; }
-    .manifesto-side {
-      border-left: none;
-      border-top: 1px solid var(--line);
-      padding-left: 0;
-      padding-top: 1.5rem;
-    }
-    .machine-grid { grid-template-columns: 1fr; }
-    .perf-grid { grid-template-columns: repeat(2, 1fr); }
-    .log-wrap { grid-template-columns: 1fr; }
+    .hero-title { font-size: clamp(3.4rem, 18vw, 7rem); }
+    .hero-bottom { grid-template-columns: 1fr 1fr; }
+    .beginnings { grid-template-columns: 1fr; }
+    .race-wrap { grid-template-columns: 1fr; }
+    .race-side { position: static; }
+    .ev { grid-template-columns: 1fr; gap: 0.5rem; }
     .engage-inner { grid-template-columns: 1fr; }
     .foot-inner { grid-template-columns: 1fr 1fr; }
-    .pull { grid-template-columns: 1fr; gap: 1rem; }
-    .pull .pull-meta { text-align: left; }
+    .mentors { grid-template-columns: 1fr; }
+    .mentors-list { grid-template-columns: 1fr 1fr; }
     .sustain { grid-template-columns: 1fr; }
     .sdg-grid { grid-template-columns: 1fr; }
-    .inspirations { grid-template-columns: 1fr; }
-    .mentors { grid-template-columns: 1fr; }
   }
-  @media (max-width: 540px) {
-    .perf-grid { grid-template-columns: 1fr; }
+  @media (max-width: 600px) {
+    .drivers { grid-template-columns: repeat(2, 1fr); }
+    .partners-wall { grid-template-columns: repeat(2, 1fr); }
+    .specs-grid { grid-template-columns: repeat(2, 1fr); }
+    .specs-grid .spec { border-right: none; border-bottom: 1px solid var(--line); }
+    .insp-grid { grid-template-columns: 1fr; }
     .foot-inner { grid-template-columns: 1fr; }
-    .section-head { grid-template-columns: 1fr; }
-    .section-kicker { grid-column: 1; }
-    .hero { padding-top: 5.5rem; }
-    .lights .lamp { width: 14px; height: 14px; }
-    .crew-card { aspect-ratio: auto; }
+    .mentors-list { grid-template-columns: 1fr; }
+    .chapter-head { grid-template-columns: 1fr; }
+    .hero-bottom { grid-template-columns: 1fr; gap: 1rem; }
   }
 </style>
 </head>
@@ -1161,7 +1234,6 @@
 
 <div class="grain" aria-hidden="true"></div>
 
-<!-- Lightning bolt SVG (referenced via <use>) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <symbol id="bolt" viewBox="0 0 24 32">
@@ -1173,27 +1245,26 @@
 <!-- ============================================================
      TOP NAV
 ============================================================ -->
-<header class="topnav">
-  <a href="#top" class="mark" aria-label="Team Supercharged home">
-    <div class="mark-glyph">
-      <svg><use href="#bolt"/></svg>
-    </div>
-    <div class="mark-meta">
-      <strong>SUPERCHARGED</strong>
-      <span>Team T62 · India · 2025</span>
-    </div>
+<header class="topnav" id="topnav">
+  <a href="#top" class="mark">
+    <svg class="bolt-mark" aria-hidden="true"><use href="#bolt"/></svg>
+    <span>Supercharged</span>
   </a>
   <nav class="menu" aria-label="Primary">
-    <a href="#manifesto" data-num="01">Manifesto</a>
-    <a href="#machine"   data-num="02">Dasher</a>
-    <a href="#crew"      data-num="03">Crew</a>
-    <a href="#log"       data-num="04">Race Log</a>
-    <a href="#partners"  data-num="05">Partners</a>
-    <a href="#engage"    data-num="06">Engage</a>
+    <a href="#drivers"     data-num="01">Drivers</a>
+    <a href="#beginnings"  data-num="02">Beginnings</a>
+    <a href="#machine"     data-num="03">Dasher</a>
+    <a href="#innovations" data-num="04">Innovations</a>
+    <a href="#race"        data-num="05">Race</a>
+    <a href="#partners"    data-num="06">Partners</a>
+    <a href="#engage"      data-num="07">Engage</a>
   </nav>
-  <div class="status">
-    <span class="dot" aria-hidden="true"></span>
-    <span>Pit Wall · <span id="liveClock">00:00:00 IST</span></span>
+  <div class="topnav-right">
+    <div class="lang">
+      <a href="#" class="on">EN</a>
+      <a href="#">HI</a>
+    </div>
+    <span id="liveClock">00:00 IST</span>
   </div>
 </header>
 
@@ -1201,570 +1272,481 @@
      HERO
 ============================================================ -->
 <section class="hero" id="top">
-  <svg class="hero-bolt" aria-hidden="true"><use href="#bolt"/></svg>
-  <span class="side-label" aria-hidden="true">Dossier · T62 / The British School / New Delhi</span>
-
-  <div class="hero-meta">
-    <div><strong>Dossier</strong>T62·<span class="red">India</span></div>
-    <div>Aramco STEM Racing™ World Finals</div>
-    <div><span class="ylw">Singapore</span> · 09 / 2025</div>
+  <div class="hero-top">
+    <div class="label"><strong>Dossier</strong>T62 · India · The British School, New Delhi</div>
+    <div class="label"><strong>Event</strong>Aramco STEM Racing™ World Finals · <span class="red">Singapore</span> · 09 / 2025</div>
   </div>
 
-  <div class="lights" aria-hidden="true">
-    <div class="lamp" data-l="1"></div>
-    <div class="lamp" data-l="2"></div>
-    <div class="lamp" data-l="3"></div>
-    <div class="lamp" data-l="4"></div>
-    <div class="lamp" data-l="5"></div>
-    <span class="label" id="lightsLabel">— Standby</span>
+  <div class="hero-center">
+    <h1 class="hero-title">
+      <span class="w">super</span>
+      <span class="w stroke">charged</span>
+      <span class="w red">.</span>
+    </h1>
+    <p class="hero-tag">Five students. One CO₂ car. One country. Eighteen months of CFD, code and tape — and a stopwatch that refused to tick higher than 1.330&nbsp;seconds.</p>
   </div>
 
-  <h1 class="hero-title" aria-label="Supercharged">
-    <span class="line">Super</span>
-    <span class="line">Charged</span>
-  </h1>
-
-  <div class="hero-foot">
-    <div class="dim">
-      <span class="big">49·G</span>
-      <span class="small">Race Mass · 1g over min.</span>
+  <div class="hero-bottom">
+    <div class="col">
+      <span class="k">Best Track</span>
+      <span class="v red">1.330 s</span>
     </div>
-    <div class="hero-words">
-      <p>Five students from New Delhi. One CO₂-powered F1 car. <em>Eighteen months</em> of CFD, CNC and code, and the goal of becoming the first Indian team to win the Aramco STEM Racing World Finals.</p>
+    <div class="col">
+      <span class="k">Race Mass</span>
+      <span class="v">49 g</span>
     </div>
-    <div class="dim" style="text-align:right;">
-      <span class="big red">1.330·s</span>
-      <span class="small">Best Track Time · Denford</span>
+    <div class="col">
+      <span class="k">Class</span>
+      <span class="v">CO₂ · Pro</span>
     </div>
-  </div>
-
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker-track">
-      <span>Team T62 · India</span>
-      <span class="ylw">Aramco STEM Racing World Finals 2025</span>
-      <span>Resorts World Sentosa · Singapore</span>
-      <span>25 Sep – 03 Oct 2025</span>
-      <span>Car · Dasher</span>
-      <span class="ylw">CO₂ Dragster · Pro Class</span>
-      <span>Best Track Time · 1.330 s</span>
-      <span>Mass · 49 g</span>
-      <span>Drag Cd · 0.171</span>
-      <span class="ylw">Magnetic Nosecone · N52</span>
-      <span>Race Model · 900 + lines · Python</span>
-      <span>Team T62 · India</span>
-      <span class="ylw">Aramco STEM Racing World Finals 2025</span>
-      <span>Resorts World Sentosa · Singapore</span>
-      <span>25 Sep – 03 Oct 2025</span>
-      <span>Car · Dasher</span>
-      <span class="ylw">CO₂ Dragster · Pro Class</span>
-      <span>Best Track Time · 1.330 s</span>
-      <span>Mass · 49 g</span>
-      <span>Drag Cd · 0.171</span>
-    </div>
+    <a class="scroll-cue" href="#drivers" aria-label="Scroll down">
+      <span>scroll</span>
+      <span class="arrow"></span>
+      <span>01 — drivers</span>
+    </a>
   </div>
 </section>
 
 <!-- ============================================================
-     01 — MANIFESTO
+     01 — THE DRIVERS
 ============================================================ -->
-<section id="manifesto" class="manifesto">
+<section id="drivers" class="chapter">
   <div class="container">
-    <div class="section-head reveal">
-      <div class="section-num"><span>0</span>1</div>
+    <div class="chapter-head reveal">
+      <div class="chapter-num">01 · The Drivers</div>
       <div>
-        <div class="section-kicker">Doctrine · Vision &amp; Mission</div>
-        <h2 class="section-title">Five students,<br/>one Indian flag,<br/>a world-finals car.</h2>
+        <h2 class="chapter-title">five students,<br/>one indian flag.</h2>
+        <p class="chapter-sub">A team built on five distinct skill sets — design, manufacture, marketing, leadership, research. Selected for their craft, organised by their strengths, raced under one livery.</p>
       </div>
     </div>
 
-    <div class="manifesto-grid">
-      <div class="reveal d1">
-        <p class="lede">SUPERCHARGED is five engineers, designers and storytellers from <em>The British School, New Delhi</em>. Across eighteen months we designed in Fusion 360, simulated in Ansys, machined in CNC, validated on the Denford track — and arrived in Singapore as Team T62, India.</p>
-
-        <p class="lede" style="margin-top:1.4rem;">Our charter is one line long: <em>be the first Indian team to win the Aramco STEM Racing World Finals</em>. Everything we do — every gram, every micron, every millisecond — is measured against that.</p>
-      </div>
-
-      <aside class="manifesto-side reveal d2">
-        <div>
-          <h4>Vision</h4>
-          <p>To create a name in STEM Racing while making a positive impact beyond the track — and to lead with innovation, teamwork and sustainability.</p>
+    <div class="drivers">
+      <article class="driver reveal d1">
+        <div class="driver-photo" data-init="N">
+          <span class="num">01</span>
+          <span class="role">Team Lead · Social</span>
         </div>
-        <div>
-          <h4>Mission</h4>
-          <p>To deliver excellence through defined roles, strong communication and teamwork. To work as a united team embracing every challenge with passion and purpose.</p>
-        </div>
-        <div>
-          <h4>Method</h4>
-          <p>CFD-driven aero. Hybrid CNC + SLS manufacture. Double-bearing wheel system. A Python race model with 900+ lines that predicts our race time before we cut a chip.</p>
-        </div>
-      </aside>
-    </div>
-
-    <div class="pull reveal">
-      <div class="mono small upper" style="color:var(--yellow)">Article · I</div>
-      <blockquote>"Speed is a <span class="red">byproduct</span> of being honest with the <span class="ylw">data</span>."</blockquote>
-      <div class="pull-meta">— Team Charter<br/>SUPERCHARGED · 2025</div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     02 — THE MACHINE
-============================================================ -->
-<section id="machine" class="machine">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="section-num"><span>0</span>2</div>
-      <div>
-        <div class="section-kicker">Vehicle · "Dasher"</div>
-        <h2 class="section-title">A 49-gram argument<br/>for less.</h2>
-      </div>
-    </div>
-
-    <div class="machine-grid">
-      <figure class="blueprint reveal d1">
-        <div class="corners"></div>
-        <svg class="car-svg" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dasher technical view">
-          <line x1="20" y1="262" x2="780" y2="262" stroke="rgba(242,238,229,0.20)" stroke-dasharray="3 5"/>
-          <line x1="400" y1="20" x2="400" y2="300" stroke="rgba(245,5,46,0.18)" stroke-dasharray="2 6" stroke-width="0.8"/>
-
-          <!-- front wing (Rafale canard inspired) -->
-          <rect x="46" y="206" width="78" height="6" fill="#F2EEE5"/>
-          <rect x="58" y="186" width="6" height="32" fill="#F2EEE5"/>
-          <rect x="106" y="186" width="6" height="32" fill="#F2EEE5"/>
-
-          <!-- nose cone (magnetic — yellow seam) -->
-          <path d="M124 232 L210 200 L256 198 L256 248 L124 248 Z" fill="#023073"/>
-          <line x1="208" y1="200" x2="208" y2="248" stroke="#E7B922" stroke-width="2" stroke-dasharray="3 3"/>
-
-          <!-- main body (peregrine streamline) -->
-          <path d="M256 198 L370 188 L412 170 L546 170 L588 188 L676 198 L716 222 L716 242 L688 252 L666 252 L644 262 L568 262 L548 252 L298 252 L278 262 L202 262 L180 252 L158 252 L136 248 L124 244 L124 232 Z" fill="#F5052E"/>
-
-          <!-- split sidepods -->
-          <path d="M280 196 L370 188 L412 188 L412 222 L280 222 Z" fill="#07091A" opacity="0.85"/>
-          <line x1="280" y1="206" x2="412" y2="206" stroke="#E7B922" stroke-width="0.6" opacity="0.6"/>
-
-          <!-- engine cover -->
-          <path d="M438 168 L500 152 L546 152 L546 170 L438 170 Z" fill="#023073" opacity="0.75"/>
-          <line x1="430" y1="180" x2="560" y2="180" stroke="#E7B922" stroke-width="0.4" opacity="0.4"/>
-
-          <!-- cockpit -->
-          <ellipse cx="436" cy="170" rx="40" ry="11" fill="#07091A"/>
-          <circle cx="436" cy="160" r="13" fill="#E7B922"/>
-          <rect x="429" y="156" width="14" height="3" fill="#07091A"/>
-
-          <!-- aerofin (above halo) -->
-          <path d="M414 152 L426 138 L446 138 L458 152 Z" fill="#F2EEE5" opacity="0.85"/>
-
-          <!-- rear wing (Top Fuel inspired) -->
-          <rect x="690" y="124" width="68" height="6" fill="#F2EEE5"/>
-          <rect x="690" y="124" width="6" height="58" fill="#F2EEE5"/>
-          <rect x="752" y="124" width="6" height="58" fill="#F2EEE5"/>
-          <rect x="690" y="174" width="68" height="6" fill="#F2EEE5"/>
-
-          <!-- CO2 cartridge port -->
-          <rect x="716" y="222" width="22" height="22" fill="#E7B922"/>
-          <rect x="720" y="226" width="14" height="14" fill="#07091A"/>
-
-          <!-- wheels (double-bearing system) -->
-          <g>
-            <circle cx="216" cy="252" r="32" fill="#07091A" stroke="#F2EEE5" stroke-width="2"/>
-            <circle cx="216" cy="252" r="22" fill="none" stroke="#F2EEE5" stroke-width="0.6" stroke-dasharray="2 2"/>
-            <circle cx="216" cy="252" r="16" fill="#161C3B" stroke="#F2EEE5" stroke-width="1"/>
-            <circle cx="216" cy="252" r="4" fill="#F5052E"/>
-          </g>
-          <g>
-            <circle cx="616" cy="252" r="36" fill="#07091A" stroke="#F2EEE5" stroke-width="2"/>
-            <circle cx="616" cy="252" r="26" fill="none" stroke="#F2EEE5" stroke-width="0.6" stroke-dasharray="2 2"/>
-            <circle cx="616" cy="252" r="18" fill="#161C3B" stroke="#F2EEE5" stroke-width="1"/>
-            <circle cx="616" cy="252" r="4" fill="#F5052E"/>
-          </g>
-
-          <!-- length callout -->
-          <g stroke="rgba(242,238,229,0.6)" stroke-width="0.8" fill="rgba(242,238,229,0.7)">
-            <line x1="46" y1="296" x2="758" y2="296"/>
-            <line x1="46" y1="290" x2="46" y2="302"/>
-            <line x1="758" y1="290" x2="758" y2="302"/>
-          </g>
-          <text x="402" y="312" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#F2EEE5" letter-spacing="2">L = 210·MM (REGULATION MAX)</text>
-
-          <!-- height callout -->
-          <g stroke="rgba(245,5,46,0.7)" stroke-width="0.8" fill="rgba(245,5,46,0.9)">
-            <line x1="772" y1="124" x2="772" y2="262"/>
-            <line x1="766" y1="124" x2="778" y2="124"/>
-            <line x1="766" y1="262" x2="778" y2="262"/>
-          </g>
-          <text x="780" y="196" font-family="JetBrains Mono" font-size="9" fill="#F5052E" letter-spacing="1.5">H 65 MM</text>
-
-          <!-- annotations -->
-          <g font-family="JetBrains Mono" font-size="8" fill="rgba(242,238,229,0.55)" letter-spacing="1.5">
-            <text x="86" y="178">RAFALE CANARD WING</text>
-            <line x1="86" y1="184" x2="86" y2="200" stroke="rgba(242,238,229,0.4)" stroke-width="0.5"/>
-
-            <text x="160" y="184" fill="#E7B922">N52 · MAGNET SEAM</text>
-            <line x1="208" y1="186" x2="208" y2="200" stroke="#E7B922" stroke-width="0.5"/>
-
-            <text x="408" y="128" fill="#E7B922">AEROFIN · HALO LIP</text>
-            <line x1="436" y1="132" x2="436" y2="142" stroke="#E7B922" stroke-width="0.5"/>
-
-            <text x="664" y="106">REAR WING · DUAL-ELEMENT</text>
-            <line x1="722" y1="110" x2="722" y2="124" stroke="rgba(242,238,229,0.4)" stroke-width="0.5"/>
-
-            <text x="666" y="226" fill="#E7B922">CO₂ · 8 g · ALIGNED</text>
-
-            <text x="216" y="296" text-anchor="middle">DBL BEARING</text>
-            <text x="616" y="296" text-anchor="middle">DBL BEARING</text>
-          </g>
-
-          <g stroke="rgba(245,5,46,0.7)" stroke-width="0.8">
-            <line x1="14" y1="14" x2="26" y2="14"/>
-            <line x1="14" y1="14" x2="14" y2="26"/>
-            <line x1="786" y1="14" x2="774" y2="14"/>
-            <line x1="786" y1="14" x2="786" y2="26"/>
-          </g>
-        </svg>
-        <div class="blueprint-meta">
-          <span><b>DASHER</b> · CAR A / B</span>
-          <span class="ylw">SHEET 02 / 04</span>
-          <span>SCALE 1 : 1</span>
-        </div>
-      </figure>
-
-      <div class="specs reveal d2">
-        <div class="spec-row">
-          <span class="key" data-i="01">Body Length</span>
-          <span class="dots"></span>
-          <span class="val">210<small>mm</small></span>
-        </div>
-        <div class="spec-row">
-          <span class="key" data-i="02">Width</span>
-          <span class="dots"></span>
-          <span class="val">65<small>mm</small></span>
-        </div>
-        <div class="spec-row">
-          <span class="key" data-i="03">Race Mass</span>
-          <span class="dots"></span>
-          <span class="val">49<small>g · min 48</small></span>
-        </div>
-        <div class="spec-row">
-          <span class="key" data-i="04">Min M.O.I.</span>
-          <span class="dots"></span>
-          <span class="val">156.41<small>g·mm²</small></span>
-        </div>
-        <div class="spec-row">
-          <span class="key" data-i="05">Best Time</span>
-          <span class="dots"></span>
-          <span class="val">1.330<small>s · car b</small></span>
-        </div>
-        <div class="spec-row">
-          <span class="key" data-i="06">Propellant</span>
-          <span class="dots"></span>
-          <span class="val">CO₂ 8<small>g</small></span>
-        </div>
-        <div class="spec-row">
-          <span class="key" data-i="07">CAD</span>
-          <span class="dots"></span>
-          <span class="val">Fusion 360</span>
-        </div>
-        <div class="spec-row">
-          <span class="key" data-i="08">CFD</span>
-          <span class="dots"></span>
-          <span class="val">Ansys Discovery</span>
-        </div>
-        <div class="spec-row">
-          <span class="key" data-i="09">Manufacture</span>
-          <span class="dots"></span>
-          <span class="val">CNC + SLS</span>
-        </div>
-        <div class="spec-row">
-          <span class="key" data-i="10">Race Model</span>
-          <span class="dots"></span>
-          <span class="val">Python · 900<small>+ lines</small></span>
-        </div>
-      </div>
-    </div>
-
-    <!-- INNOVATIONS -->
-    <div class="innov reveal">
-      <div class="innov-card">
-        <div>
-          <span class="innov-num">Innov · 01</span>
-          <h4>Magnetic Nosecone</h4>
-          <p>5 × 2 mm notches in body and nose, joined by an N52 neodymium magnet. Snap-swap during testing without superglue, without compromising aero alignment.</p>
-        </div>
-        <span class="tag">Snap-swap · Field-serviceable</span>
-      </div>
-      <div class="innov-card">
-        <div>
-          <span class="innov-num">Innov · 02</span>
-          <h4>Split Bearing System</h4>
-          <p>Dual bearings per wheel hold the axle on a true straight line. Less wobble, less lateral deviation, more of the CO₂ thrust converting into actual forward motion.</p>
-        </div>
-        <span class="tag">21.4 % of total drag</span>
-      </div>
-      <div class="innov-card">
-        <div>
-          <span class="innov-num">Innov · 03</span>
-          <h4>Aerofins + Halo Lip</h4>
-          <p>Small fins above the halo and a vertical lip below it. Dirty incoming air becomes straightened streamlines that get pushed cleanly over and around the cockpit.</p>
-        </div>
-        <span class="tag">Inspired · Modern F1</span>
-      </div>
-      <div class="innov-card">
-        <div>
-          <span class="innov-num">Innov · 04</span>
-          <h4>Mathematical Race Model</h4>
-          <p>900+ lines of Python integrating thrust curves, wheel friction, drag, tether yaw and guide-base height. Predicts race time, side displacement and yaw before a chip is cut.</p>
-        </div>
-        <span class="tag">3,000 Monte-Carlo runs</span>
-      </div>
-    </div>
-
-    <!-- INSPIRATIONS -->
-    <div class="inspirations reveal">
-      <div>
-        <h5>Inspired by<small>nature, aerospace, dragsters</small></h5>
-      </div>
-      <div class="insp-row">
-        <div class="insp">
-          <div class="from">Inspiration</div>
-          <div class="what">Peregrine Falcon</div>
-          <div class="why">Tapered body, sharp trailing edges. Dives at 389 km/h with attached flow.</div>
-        </div>
-        <div class="insp">
-          <div class="from">Inspiration</div>
-          <div class="what">Dassault Rafale</div>
-          <div class="why">Close-coupled canards energise airflow before it reaches the body.</div>
-        </div>
-        <div class="insp">
-          <div class="from">Inspiration</div>
-          <div class="what">Top Fuel Dragster</div>
-          <div class="why">Elevated, low-angle rear wing for downforce in clean launch air.</div>
-        </div>
-        <div class="insp">
-          <div class="from">Inspiration</div>
-          <div class="what">Olympic Aero Helmets</div>
-          <div class="why">Pointed forebody cuts pressure drag by 30 %+ versus blunt bodies.</div>
-        </div>
-        <div class="insp">
-          <div class="from">Inspiration</div>
-          <div class="what">Formula E Venturi</div>
-          <div class="why">Underbody taper creates controlled low-pressure zones, smoothing exit flow.</div>
-        </div>
-        <div class="insp">
-          <div class="from">Inspiration</div>
-          <div class="what">Rocket Engines</div>
-          <div class="why">Thrust through centre of mass — &lt; 5 mm offset. No tipping, all forward.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     PERFORMANCE BAND
-============================================================ -->
-<section class="perf reveal">
-  <div class="container">
-    <div class="perf-grid">
-      <div class="perf-cell" data-i="P·01">
-        <span class="pk">Best Track Time</span>
-        <span class="pv" data-count="1.330" data-decimals="3">0.000</span>
-        <span class="pu">seconds · Car B</span>
-      </div>
-      <div class="perf-cell" data-i="P·02">
-        <span class="pk">Iteration Δ · Car A</span>
-        <span class="pv" data-count="160" data-decimals="0">0</span>
-        <span class="pu">ms shaved per cycle</span>
-      </div>
-      <div class="perf-cell" data-i="P·03">
-        <span class="pk">Race Mass</span>
-        <span class="pv" data-count="49" data-decimals="0">0</span>
-        <span class="pu">grams · min 48</span>
-      </div>
-      <div class="perf-cell" data-i="P·04">
-        <span class="pk">Race Model</span>
-        <span class="pv" data-count="900" data-decimals="0">0</span>
-        <span class="pu">+ lines of Python</span>
-      </div>
-    </div>
-    <div class="perf-foot">
-      <span>Telemetry · Denford 22.4 m track / pre-Singapore validation</span>
-      <span>Car A &nbsp;·&nbsp; Car B &nbsp;·&nbsp; Car C tested in parallel</span>
-      <span>Mass / Aero / Wheel / Tether = 41.7 / 29.2 / 21.4 / 5.9 %</span>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     03 — CREW
-============================================================ -->
-<section id="crew">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="section-num"><span>0</span>3</div>
-      <div>
-        <div class="section-kicker">The crew · Five roles, one car</div>
-        <h2 class="section-title">Built by hand,<br/>raced by name.</h2>
-      </div>
-    </div>
-
-    <div class="crew-grid">
-      <article class="crew-card reveal d1">
-        <div class="crew-top">
-          <span class="crew-num">01</span>
-          <span class="mono small upper" style="color:var(--muted);">T62 · 25</span>
-        </div>
-        <div class="crew-portrait" data-init="N"></div>
-        <div class="crew-bottom">
-          <div class="crew-role">Team Lead · Social Media</div>
-          <div class="crew-name">Nysa<br/>Rakheja</div>
-          <p class="crew-bio">Coordinates technical and marketing sub-teams, owns deadlines, brand and the public face of Supercharged. Calls the shot when the timing screen flickers.</p>
-        </div>
+        <h3 class="driver-name">Nysa<br/>Rakheja</h3>
+        <p class="driver-bio">Coordinates technical and marketing sub-teams. Owns deadlines, brand, and the public face of the team.</p>
+        <span class="driver-skill">Leadership · Branding</span>
       </article>
 
-      <article class="crew-card reveal d2">
-        <div class="crew-top">
-          <span class="crew-num">02</span>
-          <span class="mono small upper" style="color:var(--muted);">T62 · 25</span>
+      <article class="driver reveal d2">
+        <div class="driver-photo" data-init="A">
+          <span class="num">02</span>
+          <span class="role">Marketing · Sponsorship</span>
         </div>
-        <div class="crew-portrait" data-init="A"></div>
-        <div class="crew-bottom">
-          <div class="crew-role">Marketing &amp; Sponsorship</div>
-          <div class="crew-name">Arnav<br/>Jain</div>
-          <p class="crew-bio">Built and ran the brand identity, secured Diamond and Gold tier sponsorships, owns ROI strategy and the sustainability programme.</p>
-        </div>
+        <h3 class="driver-name">Arnav<br/>Jain</h3>
+        <p class="driver-bio">Built the brand identity, secured Diamond and Gold tier sponsorships, owns ROI strategy and the sustainability programme.</p>
+        <span class="driver-skill">Negotiation · ROI</span>
       </article>
 
-      <article class="crew-card reveal d3">
-        <div class="crew-top">
-          <span class="crew-num">03</span>
-          <span class="mono small upper" style="color:var(--muted);">T62 · 25</span>
+      <article class="driver reveal d3">
+        <div class="driver-photo" data-init="R">
+          <span class="num">03</span>
+          <span class="role">Research · Design</span>
         </div>
-        <div class="crew-portrait" data-init="R"></div>
-        <div class="crew-bottom">
-          <div class="crew-role">Research &amp; Design Head</div>
-          <div class="crew-name">Reyansh<br/>Gupta</div>
-          <p class="crew-bio">Owns CAD, CFD and the Python race model. Aerodynamic innovations, scrutineering drawings, and the website you're reading right now.</p>
-        </div>
+        <h3 class="driver-name">Reyansh<br/>Gupta</h3>
+        <p class="driver-bio">Owns CAD, CFD and the 900-line Python race model. Aerodynamic innovations, scrutineering drawings, and this site.</p>
+        <span class="driver-skill">CFD · Aerodynamics</span>
       </article>
 
-      <article class="crew-card reveal d4">
-        <div class="crew-top">
-          <span class="crew-num">04</span>
-          <span class="mono small upper" style="color:var(--muted);">T62 · 25</span>
+      <article class="driver reveal d4">
+        <div class="driver-photo" data-init="K">
+          <span class="num">04</span>
+          <span class="role">Manufacture · Testing</span>
         </div>
-        <div class="crew-portrait" data-init="K"></div>
-        <div class="crew-bottom">
-          <div class="crew-role">Manufacturing &amp; Testing</div>
-          <div class="crew-name">Kanav<br/>Vig</div>
-          <p class="crew-bio">CNC machining, SLS finishing, paint and assembly. Runs virtual and Denford-track validation; carries a digital caliper everywhere.</p>
-        </div>
+        <h3 class="driver-name">Kanav<br/>Vig</h3>
+        <p class="driver-bio">CNC, SLS finishing, paint, assembly. Runs virtual and Denford-track validation. Carries a digital caliper everywhere.</p>
+        <span class="driver-skill">CNC · Assembly</span>
       </article>
 
-      <article class="crew-card reveal d5">
-        <div class="crew-top">
-          <span class="crew-num">05</span>
-          <span class="mono small upper" style="color:var(--muted);">T62 · 25</span>
+      <article class="driver reveal d5">
+        <div class="driver-photo" data-init="R">
+          <span class="num">05</span>
+          <span class="role">Design Engineer</span>
         </div>
-        <div class="crew-portrait" data-init="R"></div>
-        <div class="crew-bottom">
-          <div class="crew-role">Design Engineer</div>
-          <div class="crew-name">Rudrav<br/>Khaitan</div>
-          <p class="crew-bio">Iterative CAD, secondary aerodynamics research, scrutineering visuals and technical writing. Compliance is non-negotiable.</p>
-        </div>
+        <h3 class="driver-name">Rudrav<br/>Khaitan</h3>
+        <p class="driver-bio">Iterative CAD, secondary aerodynamics research, scrutineering visuals and technical writing. Compliance is non-negotiable.</p>
+        <span class="driver-skill">CAD · Compliance</span>
       </article>
     </div>
 
-    <!-- MENTORS -->
     <div class="mentors reveal">
       <div>
-        <h5>Mentors<small>Without whom, none of this</small></h5>
+        <h4>Mentors</h4>
+        <p>The voices we heard before every important decision — at school, in motorsport, and online from past winners.</p>
       </div>
-      <div class="mentor-list">
-        <span>Ms. Sonica Puri<small>School Mentor · Project Approval</small></span>
+      <div class="mentors-list">
+        <span>Ms. Sonica Puri<small>School Mentor · Approval</small></span>
         <span>Mr. Shubham Taneja<small>Stemplify · Lead Mentor</small></span>
-        <span>Mr. Sanjay Sharma<small>Head, JK Motorsports</small></span>
+        <span>Mr. Sanjay Sharma<small>JK Motorsports</small></span>
         <span>Mr. Karan A&nbsp;M&nbsp;D<small>JK Tyres</small></span>
         <span>Mr. Arbaz Khan<small>BMW Infinity Cars</small></span>
         <span>Mr. Michael Rudinsky<small>Boca Bearings</small></span>
         <span>Mrs. Kylie Battles<small>Ansys</small></span>
         <span>Dr. Sarvjit Herald<small>India STEM Foundation</small></span>
-        <span>Team Evolution<small>Germany · Online Mentors</small></span>
+        <span>Team Evolution<small>Germany · World Finals winners</small></span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     04 — RACE LOG + SUSTAINABILITY
+     02 — THE BEGINNINGS
 ============================================================ -->
-<section id="log">
+<section id="beginnings" class="chapter">
   <div class="container">
-    <div class="section-head reveal">
-      <div class="section-num"><span>0</span>4</div>
+    <div class="chapter-head reveal">
+      <div class="chapter-num">02 · The Beginnings</div>
       <div>
-        <div class="section-kicker">Race Log · From Delhi to Sentosa</div>
-        <h2 class="section-title">A garage, three Mks,<br/>seventeen sponsors.</h2>
+        <h2 class="chapter-title">it started in<br/>a school workshop.</h2>
+        <p class="chapter-sub">April 2024. One workbench. A printable rulebook. A vow that grew into a team, a charter and a car called Dasher.</p>
       </div>
     </div>
 
-    <div class="log-wrap">
-      <aside class="log-side reveal d1">
-        <p>SUPERCHARGED started on a single workbench at The British School, New Delhi. Three seasons later we represented India at the Aramco STEM Racing World Finals in Singapore. Below: every milestone that mattered.</p>
-        <span class="badge">World Finals · Singapore · 09·25</span>
+    <div class="beginnings">
+      <div class="beginnings-text reveal d1">
+        <p>The first prototype was sketched in <em>Fusion 360</em> on a Saturday afternoon in April 2024 — barely fitting inside the regulation block, far too heavy, and held together by hopes more than tolerances.</p>
+        <p>Then we built another. Then a third. We added a CFD pipeline, a CNC partner, an SLS print bureau, and a Python race model that grew past nine hundred lines. We won regionals. We took silver at nationals. We talked our way into a flight to Singapore.</p>
+        <p>By the time Dasher rolled into <em>Resorts World Sentosa</em> on 25 September 2025, we'd planted a tree for every prototype, mentored other teams at our own school's regionals, and stood on stage with the F4 paddock at Coimbatore.</p>
+        <p>It started in a school workshop. It became an Indian flag at the Aramco STEM Racing World Finals.</p>
+      </div>
+
+      <figure class="beginnings-img reveal d2" aria-label="Image placeholder for team origin photo">
+        <span class="crosshair tl"></span>
+        <span class="crosshair br"></span>
+        <div class="frame-label">
+          <span>FRAME · 02·01</span>
+          <span class="red">[ TBS · GARAGE · 04·24 ]</span>
+        </div>
+      </figure>
+    </div>
+
+    <div class="pull-quote reveal">
+      <span class="mono">— Article I · Team Charter</span>
+      <blockquote>"Speed is a <em>byproduct</em> of being honest with the data."</blockquote>
+      <div class="src">SUPERCHARGED · Rev. 04 · 2025</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     03 — DASHER
+============================================================ -->
+<section id="machine" class="chapter">
+  <div class="container">
+    <div class="chapter-head reveal">
+      <div class="chapter-num">03 · Dasher</div>
+      <div>
+        <h2 class="chapter-title">a forty-nine-gram<br/>argument for less.</h2>
+        <p class="chapter-sub">Body inspired by the peregrine falcon. Front wing inspired by the Rafale's canard. CO₂ chamber aligned to within 5&nbsp;mm of the centre of mass — because rocket engineers don't accept tipping moments and neither do we.</p>
+      </div>
+    </div>
+
+    <figure class="machine-stage reveal d1" aria-label="Dasher technical schematic">
+      <svg class="car" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" role="img">
+        <line x1="20" y1="262" x2="780" y2="262" stroke="rgba(248,244,237,0.20)" stroke-dasharray="3 5"/>
+        <line x1="400" y1="20" x2="400" y2="300" stroke="rgba(245,5,46,0.18)" stroke-dasharray="2 6" stroke-width="0.8"/>
+
+        <!-- front wing -->
+        <rect x="46" y="206" width="78" height="6" fill="#F8F4ED"/>
+        <rect x="58" y="186" width="6" height="32" fill="#F8F4ED"/>
+        <rect x="106" y="186" width="6" height="32" fill="#F8F4ED"/>
+
+        <!-- nose cone with magnet seam -->
+        <path d="M124 232 L210 200 L256 198 L256 248 L124 248 Z" fill="#F8F4ED" opacity="0.92"/>
+        <line x1="208" y1="200" x2="208" y2="248" stroke="#E7B922" stroke-width="2" stroke-dasharray="3 3"/>
+
+        <!-- main body -->
+        <path d="M256 198 L370 188 L412 170 L546 170 L588 188 L676 198 L716 222 L716 242 L688 252 L666 252 L644 262 L568 262 L548 252 L298 252 L278 262 L202 262 L180 252 L158 252 L136 248 L124 244 L124 232 Z" fill="#F5052E"/>
+
+        <!-- split sidepod -->
+        <path d="M280 196 L370 188 L412 188 L412 222 L280 222 Z" fill="#050505" opacity="0.9"/>
+
+        <!-- engine cover -->
+        <path d="M438 168 L500 152 L546 152 L546 170 L438 170 Z" fill="#1c1c1c"/>
+
+        <!-- cockpit -->
+        <ellipse cx="436" cy="170" rx="40" ry="11" fill="#050505"/>
+        <circle cx="436" cy="160" r="13" fill="#F8F4ED"/>
+        <rect x="429" y="156" width="14" height="3" fill="#050505"/>
+
+        <!-- aerofin -->
+        <path d="M414 152 L426 138 L446 138 L458 152 Z" fill="#F8F4ED" opacity="0.85"/>
+
+        <!-- rear wing -->
+        <rect x="690" y="124" width="68" height="6" fill="#F8F4ED"/>
+        <rect x="690" y="124" width="6" height="58" fill="#F8F4ED"/>
+        <rect x="752" y="124" width="6" height="58" fill="#F8F4ED"/>
+        <rect x="690" y="174" width="68" height="6" fill="#F8F4ED"/>
+
+        <!-- CO2 port -->
+        <rect x="716" y="222" width="22" height="22" fill="#E7B922"/>
+        <rect x="720" y="226" width="14" height="14" fill="#050505"/>
+
+        <!-- wheels -->
+        <g>
+          <circle cx="216" cy="252" r="32" fill="#050505" stroke="#F8F4ED" stroke-width="1.5"/>
+          <circle cx="216" cy="252" r="22" fill="none" stroke="#F8F4ED" stroke-width="0.5" stroke-dasharray="2 2"/>
+          <circle cx="216" cy="252" r="16" fill="#1c1c1c" stroke="#F8F4ED" stroke-width="0.7"/>
+          <circle cx="216" cy="252" r="4" fill="#F5052E"/>
+        </g>
+        <g>
+          <circle cx="616" cy="252" r="36" fill="#050505" stroke="#F8F4ED" stroke-width="1.5"/>
+          <circle cx="616" cy="252" r="26" fill="none" stroke="#F8F4ED" stroke-width="0.5" stroke-dasharray="2 2"/>
+          <circle cx="616" cy="252" r="18" fill="#1c1c1c" stroke="#F8F4ED" stroke-width="0.7"/>
+          <circle cx="616" cy="252" r="4" fill="#F5052E"/>
+        </g>
+
+        <!-- length callout -->
+        <g stroke="rgba(248,244,237,0.4)" stroke-width="0.6" fill="rgba(248,244,237,0.65)">
+          <line x1="46" y1="296" x2="758" y2="296"/>
+          <line x1="46" y1="290" x2="46" y2="302"/>
+          <line x1="758" y1="290" x2="758" y2="302"/>
+        </g>
+        <text x="402" y="312" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#F8F4ED" letter-spacing="2">L = 210 MM (REGULATION MAX)</text>
+
+        <!-- height -->
+        <g stroke="rgba(245,5,46,0.6)" stroke-width="0.6" fill="rgba(245,5,46,0.85)">
+          <line x1="772" y1="124" x2="772" y2="262"/>
+          <line x1="766" y1="124" x2="778" y2="124"/>
+          <line x1="766" y1="262" x2="778" y2="262"/>
+        </g>
+        <text x="780" y="196" font-family="JetBrains Mono" font-size="9" fill="#F5052E" letter-spacing="1.5">H 65 MM</text>
+
+        <!-- annotations -->
+        <g font-family="JetBrains Mono" font-size="8" fill="rgba(248,244,237,0.55)" letter-spacing="1.5">
+          <text x="160" y="184" fill="#E7B922">N52 · MAGNET SEAM</text>
+          <line x1="208" y1="186" x2="208" y2="200" stroke="#E7B922" stroke-width="0.5"/>
+
+          <text x="408" y="128" fill="#E7B922">AEROFIN · HALO LIP</text>
+          <line x1="436" y1="132" x2="436" y2="142" stroke="#E7B922" stroke-width="0.5"/>
+
+          <text x="664" y="106">REAR WING · DUAL-ELEMENT</text>
+          <line x1="722" y1="110" x2="722" y2="124" stroke="rgba(248,244,237,0.4)" stroke-width="0.5"/>
+
+          <text x="666" y="226" fill="#E7B922">CO₂ · 8 g · ALIGNED</text>
+
+          <text x="216" y="296" text-anchor="middle">DBL BEARING</text>
+          <text x="616" y="296" text-anchor="middle">DBL BEARING</text>
+        </g>
+      </svg>
+    </figure>
+
+    <div class="machine-frame-meta reveal">
+      <span><b>DASHER</b> · CAR A / B</span>
+      <span class="ylw">SHEET 03 · 01</span>
+      <span>SCALE 1 : 1</span>
+      <span>FUSION 360 · ANSYS DISCOVERY · CNC + SLS</span>
+    </div>
+
+    <div class="specs-grid reveal" style="margin-top:3rem;">
+      <div class="spec">
+        <div class="k">Body Length</div>
+        <div class="v">210 <small>mm</small></div>
+      </div>
+      <div class="spec">
+        <div class="k">Width</div>
+        <div class="v">65 <small>mm</small></div>
+      </div>
+      <div class="spec">
+        <div class="k">Race Mass</div>
+        <div class="v">49 <small>g · min 48</small></div>
+      </div>
+      <div class="spec">
+        <div class="k">Best Track Time</div>
+        <div class="v red">1.330 <small>s</small></div>
+      </div>
+      <div class="spec">
+        <div class="k">Min M.O.I.</div>
+        <div class="v">156.41 <small>g·mm²</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     04 — INNOVATIONS
+============================================================ -->
+<section id="innovations" class="chapter">
+  <div class="container">
+    <div class="chapter-head reveal">
+      <div class="chapter-num">04 · The Innovations</div>
+      <div>
+        <h2 class="chapter-title">four ideas<br/>that earn their grams.</h2>
+        <p class="chapter-sub">Every gram of mass needs to justify itself in milliseconds. These four innovations did, and they're why Dasher cleared 1.330&nbsp;s on the Denford track before Singapore.</p>
+      </div>
+    </div>
+
+    <div class="innov-rail-wrap">
+      <div class="innov-rail reveal">
+        <article class="innov">
+          <div>
+            <div class="num">Innov · 01</div>
+            <h3>Magnetic<br/>Nosecone</h3>
+            <p>Five-by-two-millimetre notches in body and nose, joined by an N52 neodymium magnet. Snap-swap the nose during testing. No superglue. No aero compromise.</p>
+          </div>
+          <div class="tag">Snap-swap · <span>Field-serviceable</span></div>
+        </article>
+
+        <article class="innov">
+          <div>
+            <div class="num">Innov · 02</div>
+            <h3>Split Bearing<br/>System</h3>
+            <p>Dual bearings per wheel hold the axle on a true straight line. Less wobble, less lateral deviation, more of the CO₂ thrust converting into actual forward motion.</p>
+          </div>
+          <div class="tag">Drag share · <span>21.4 % saved</span></div>
+        </article>
+
+        <article class="innov">
+          <div>
+            <div class="num">Innov · 03</div>
+            <h3>Aerofins<br/>+ Halo Lip</h3>
+            <p>Small fins above the halo, a vertical lip below. Dirty incoming air becomes straight streamlines that get pushed cleanly over and around the cockpit.</p>
+          </div>
+          <div class="tag">Inspired · <span>Modern F1</span></div>
+        </article>
+
+        <article class="innov">
+          <div>
+            <div class="num">Innov · 04</div>
+            <h3>Mathematical<br/>Race Model</h3>
+            <p>900+ lines of Python integrating thrust curves, wheel friction, drag, tether yaw and guide-base height. Predicts race time, side displacement and yaw before a chip is cut.</p>
+          </div>
+          <div class="tag">Sims · <span>3,000 Monte Carlo runs</span></div>
+        </article>
+      </div>
+      <div class="rail-cue">
+        <span>← swipe / drag →</span>
+        <span>04 · 04 cards</span>
+      </div>
+    </div>
+
+    <div class="inspirations">
+      <h4>Inspired by</h4>
+      <div class="insp-grid">
+        <div class="insp">
+          <div class="from">Inspiration · 01</div>
+          <div class="what">Peregrine Falcon</div>
+          <div class="why">Tapered body. Sharp trailing edges. Dives at 389&nbsp;km/h with attached flow.</div>
+        </div>
+        <div class="insp">
+          <div class="from">Inspiration · 02</div>
+          <div class="what">Dassault Rafale</div>
+          <div class="why">Close-coupled canards energise airflow before it reaches the body.</div>
+        </div>
+        <div class="insp">
+          <div class="from">Inspiration · 03</div>
+          <div class="what">Top Fuel Dragster</div>
+          <div class="why">Elevated, low-angle rear wing for downforce in clean launch air.</div>
+        </div>
+        <div class="insp">
+          <div class="from">Inspiration · 04</div>
+          <div class="what">Olympic Aero Helmets</div>
+          <div class="why">Pointed forebody cuts pressure drag by 30 %+ versus blunt bodies.</div>
+        </div>
+        <div class="insp">
+          <div class="from">Inspiration · 05</div>
+          <div class="what">Formula E Venturi</div>
+          <div class="why">Underbody taper creates controlled low-pressure zones, smoothing exit flow.</div>
+        </div>
+        <div class="insp">
+          <div class="from">Inspiration · 06</div>
+          <div class="what">Rocket Engines</div>
+          <div class="why">Thrust through centre of mass — under 5 mm offset. No tipping, all forward.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     05 — THE RACE
+============================================================ -->
+<section id="race" class="chapter">
+  <div class="container">
+    <div class="chapter-head reveal">
+      <div class="chapter-num">05 · The Race</div>
+      <div>
+        <h2 class="chapter-title">delhi → coimbatore →<br/>sentosa.</h2>
+        <p class="chapter-sub">Eighteen months across three cities. Six portfolios. Three Mks. Seventeen sponsors. One Indian flag at parc&nbsp;fermé.</p>
+      </div>
+    </div>
+
+    <div class="race-wrap">
+      <aside class="race-side reveal d1">
+        <p class="lede">From a Saturday-afternoon sketch to <em>Resorts World Sentosa</em>. Below: every milestone that mattered.</p>
+        <div class="summary">
+          <span><span>Project days</span><b>184</b></span>
+          <span><span>Mks shipped</span><b>3</b></span>
+          <span><span>Cars built</span><b>2 + 1</b></span>
+          <span><span>Sponsors</span><b>17</b></span>
+          <span><span>Trees planted</span><b>1 / Mk</b></span>
+        </div>
       </aside>
 
       <ol class="timeline">
         <li class="ev reveal d1">
-          <div class="ev-date">04 · 2024</div>
-          <h3 class="ev-title">Garage Year Zero</h3>
-          <p class="ev-body">First prototype CAD on Fusion 360. The team commits to planting one tree for every car prototype manufactured between April 2024 and October 2025.</p>
-          <span class="ev-stat">Mk 0 · concept</span>
+          <div class="ev-date">04 / 2024<span>chapter 01</span></div>
+          <div class="ev-content">
+            <h3 class="ev-title">Garage Year Zero</h3>
+            <p class="ev-body">First prototype CAD on Fusion 360. The team commits to planting one tree for every car prototype manufactured between April 2024 and October 2025.</p>
+            <span class="ev-stat"><b>Mk 0</b>concept</span>
+          </div>
+        </li>
+        <li class="ev reveal d1">
+          <div class="ev-date">11 / 2024<span>chapter 02</span></div>
+          <div class="ev-content">
+            <h3 class="ev-title">F4 India · Coimbatore</h3>
+            <p class="ev-body">Met India's top motorsport professionals. Turned a race weekend into a brand-awareness drive for STEM Racing across the country.</p>
+            <span class="ev-stat"><b>+500</b>student reach</span>
+          </div>
         </li>
         <li class="ev reveal d2">
-          <div class="ev-date">11 · 2024</div>
-          <h3 class="ev-title">F4 India Promotion · Coimbatore</h3>
-          <p class="ev-body">Met India's top motorsport professionals. Turned a race weekend into a brand-awareness drive for STEM Racing across India.</p>
-          <span class="ev-stat">+ 500 student reach</span>
+          <div class="ev-date">Q1 / 2025<span>chapter 03</span></div>
+          <div class="ev-content">
+            <h3 class="ev-title">Regional Finals · TBS</h3>
+            <p class="ev-body">Volunteered as mentors at our own school's regionals. Confirmed Mk II and the path through Nationals. The brand started travelling further than the car.</p>
+            <span class="ev-stat"><b>Hub</b>India · TBS</span>
+          </div>
         </li>
         <li class="ev reveal d3">
-          <div class="ev-date">Q1 · 2025</div>
-          <h3 class="ev-title">Regional Finals · The British School</h3>
-          <p class="ev-body">Volunteered as mentors to other teams at the regionals hosted at our school. Confirmed Mk II and the path to Nationals.</p>
-          <span class="ev-stat">Mentorship · India hub</span>
+          <div class="ev-date">Q2 / 2025<span>chapter 04</span></div>
+          <div class="ev-content">
+            <h3 class="ev-title">National Finals · World Selection</h3>
+            <p class="ev-body">Booked the Singapore ticket as Team T62, India. Made the call list for the Aramco STEM Racing World Finals 2025.</p>
+            <span class="ev-stat"><b>T62</b>India</span>
+          </div>
         </li>
         <li class="ev reveal d4">
-          <div class="ev-date">Q2 · 2025</div>
-          <h3 class="ev-title">National Finals · World Finals Selection</h3>
-          <p class="ev-body">Booked the Singapore ticket as Team T62 representing India at the Aramco STEM Racing World Finals 2025.</p>
-          <span class="ev-stat"><strong>T62</strong>·India</span>
-        </li>
-        <li class="ev reveal d5">
-          <div class="ev-date">08 · 2025</div>
-          <h3 class="ev-title">Project Kick-off · 03 August</h3>
-          <p class="ev-body">Final two-month sprint into Singapore. Six portfolios, two cars, one halo, one helmet, one pit display, one ten-minute presentation.</p>
-          <span class="ev-stat">Mk III · final iteration</span>
+          <div class="ev-date">08 / 2025<span>chapter 05</span></div>
+          <div class="ev-content">
+            <h3 class="ev-title">Project Kick-off · 03 August</h3>
+            <p class="ev-body">Final two-month sprint into Singapore. Six portfolios, two cars, one halo, one helmet, one pit display, one ten-minute presentation.</p>
+            <span class="ev-stat"><b>Mk III</b>final iteration</span>
+          </div>
         </li>
         <li class="ev peak reveal d5">
-          <div class="ev-date">25 · 09 · 2025 → 03 · 10 · 2025</div>
-          <h3 class="ev-title">Aramco STEM Racing World Finals · Singapore</h3>
-          <p class="ev-body">Resorts World Sentosa. Three days of judging, scrutineering, knockouts. Best test time before parc fermé: 1.330 seconds. Goal: be the first Indian team to win.</p>
-          <span class="ev-stat"><strong>1.330 s</strong>·Best track time</span>
+          <div class="ev-date">25 · 09 → 03 · 10 / 2025<span>chapter 06</span></div>
+          <div class="ev-content">
+            <h3 class="ev-title">World <em>Finals</em> · Singapore</h3>
+            <p class="ev-body">Resorts World Sentosa. Three days of judging, scrutineering, knockouts. Best test time before parc fermé: 1.330 seconds. Goal: be the first Indian team to win.</p>
+            <span class="ev-stat"><b>1.330 s</b>best track time</span>
+          </div>
         </li>
       </ol>
     </div>
 
-    <!-- SUSTAINABILITY -->
     <div class="sustain reveal">
       <div>
-        <h4><span class="leaf">◆</span>Sustainability isn't a section.<br/>It's the spec.<small>SDG 4 · 12 · 15 · One tree per prototype</small></h4>
+        <h4><small>SDG 4 · 12 · 15</small>Sustainability is the spec, not a section.</h4>
       </div>
       <div class="sdg-grid">
         <div class="sdg">
           <div class="num">SDG 04</div>
           <div class="lbl">Quality Education</div>
-          <p class="desc">STEM awareness drives at TBS and India STEM Foundation, reaching 800+ students.</p>
+          <p class="desc">STEM awareness drives at TBS and India STEM Foundation, reaching 800 + students.</p>
         </div>
         <div class="sdg">
           <div class="num">SDG 12</div>
@@ -1782,19 +1764,19 @@
 </section>
 
 <!-- ============================================================
-     05 — PARTNERS
+     06 — PARTNERS
 ============================================================ -->
-<section id="partners">
+<section id="partners" class="chapter">
   <div class="container">
-    <div class="section-head reveal">
-      <div class="section-num"><span>0</span>5</div>
+    <div class="chapter-head reveal">
+      <div class="chapter-num">06 · The Partners</div>
       <div>
-        <div class="section-kicker">Partners · Three tiers · Seventeen names</div>
-        <h2 class="section-title">Engineered with</h2>
+        <h2 class="chapter-title">seventeen names<br/>on the side of the car.</h2>
+        <p class="chapter-sub">Diamond, Gold and Silver tier — chosen not just for their cheque but for what they teach us. Tyres, fintech, simulation, motorsport, fasteners, paint and patience.</p>
       </div>
     </div>
 
-    <div class="partners-grid reveal">
+    <div class="partners-wall reveal">
       <div class="partner"><span class="tier diamond">Diamond</span><span class="name">JK Tyres</span></div>
       <div class="partner"><span class="tier diamond">Diamond</span><span class="name">Pine Labs</span></div>
       <div class="partner"><span class="tier gold">Gold</span><span class="name">BMW Infinity Cars</span></div>
@@ -1814,41 +1796,57 @@
       <div class="partner"><span class="tier silver">Silver</span><span class="name">India STEM Foundation</span></div>
     </div>
 
-    <div class="partners-cta reveal">
-      <span>Tier · Diamond ≥ ₹5 L &nbsp;·&nbsp; Gold ₹1–2 L &nbsp;·&nbsp; Silver ≤ ₹1 L · in-kind</span>
+    <div class="partners-foot">
+      <span>Diamond ≥ ₹5 L &nbsp;·&nbsp; Gold ₹1 – 2 L &nbsp;·&nbsp; Silver ≤ ₹1 L · in-kind</span>
       <a href="#engage">Become a partner →</a>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     06 — ENGAGE
+     07 — ENGAGE
 ============================================================ -->
 <section id="engage" class="engage">
   <div class="container">
     <div class="engage-inner">
       <div class="reveal d1">
-        <div class="section-kicker" style="margin-bottom:1.2rem;">Engage · 06</div>
+        <div class="chapter-num" style="margin-bottom:1.6rem;">07 · Engage</div>
         <h2>
-          <span>Put your</span><br/>
+          put your<br/>
           <span class="red">name</span><br/>
-          <span class="out">on the car.</span>
+          <span class="stroke">on the car.</span>
         </h2>
         <p class="engage-body">Five Indian students. One World Finals trip. One car designed to be the fastest in the room. We're open to sponsorship enquiries, school visits, press, podcasts and STEM-outreach collaborations. Whether you're a brand looking for ROI on a young, fast-moving audience or a school wanting STEM Racing on your timetable — get in touch.</p>
       </div>
 
       <div class="cta-stack reveal d2">
-        <a class="cta primary" href="mailto:hello@superchargedf1.com">
-          <span>Sponsor the team</span><span class="arr">→</span>
+        <a class="cta" href="mailto:hello@superchargedf1.com">
+          <div>
+            <div class="label">Sponsor · 01</div>
+            <div class="text">Become a partner</div>
+          </div>
+          <span class="arr">→</span>
         </a>
         <a class="cta" href="mailto:press@superchargedf1.com">
-          <span>Press &amp; Media</span><span class="arr">→</span>
+          <div>
+            <div class="label">Press · 02</div>
+            <div class="text">Press &amp; media</div>
+          </div>
+          <span class="arr">→</span>
         </a>
         <a class="cta" href="mailto:hello@superchargedf1.com">
-          <span>Speaking · Schools</span><span class="arr">→</span>
+          <div>
+            <div class="label">Speaking · 03</div>
+            <div class="text">Schools &amp; outreach</div>
+          </div>
+          <span class="arr">→</span>
         </a>
         <a class="cta" href="https://www.instagram.com/superchargedf1" target="_blank" rel="noopener">
-          <span>Follow on Instagram</span><span class="arr">↗</span>
+          <div>
+            <div class="label">Follow · 04</div>
+            <div class="text">@superchargedf1</div>
+          </div>
+          <span class="arr">↗</span>
         </a>
       </div>
     </div>
@@ -1862,18 +1860,19 @@
   <div class="container">
     <div class="foot-inner">
       <div class="foot-brand">
-        Super<br/>Charged
+        supercharged.
         <small>Team T62 · India · Aramco STEM Racing™ World Finals · 2025</small>
       </div>
       <div class="foot-col">
-        <h5>Navigate</h5>
+        <h5>Chapters</h5>
         <ul>
-          <li><a href="#manifesto">01 · Manifesto</a></li>
-          <li><a href="#machine">02 · Dasher</a></li>
-          <li><a href="#crew">03 · Crew</a></li>
-          <li><a href="#log">04 · Race Log</a></li>
-          <li><a href="#partners">05 · Partners</a></li>
-          <li><a href="#engage">06 · Engage</a></li>
+          <li><a href="#drivers">01 · Drivers</a></li>
+          <li><a href="#beginnings">02 · Beginnings</a></li>
+          <li><a href="#machine">03 · Dasher</a></li>
+          <li><a href="#innovations">04 · Innovations</a></li>
+          <li><a href="#race">05 · Race</a></li>
+          <li><a href="#partners">06 · Partners</a></li>
+          <li><a href="#engage">07 · Engage</a></li>
         </ul>
       </div>
       <div class="foot-col">
@@ -1892,7 +1891,7 @@
           <li>The British School</li>
           <li>Chanakyapuri · New Delhi</li>
           <li>India · IST + 5 : 30</li>
-          <li><a href="#">Open hours · 16:00 — 19:00</a></li>
+          <li>Open hours · 16:00 — 19:00</li>
         </ul>
       </div>
     </div>
@@ -1900,43 +1899,29 @@
     <div class="foot-bottom">
       <span>© 2025 Team Supercharged · T62 · All rights to the livery reserved</span>
       <span>Aramco STEM Racing™ is a trademark of the F1 in Schools STEM Foundation</span>
-      <span>Site rev · 05·26</span>
+      <span>Site rev · 05 · 26</span>
     </div>
   </div>
 </footer>
 
 <script>
-  // Live IST clock in nav (UTC + 5:30)
+  // Live IST clock (UTC + 5:30) — abbreviated in nav
   const clockEl = document.getElementById('liveClock');
   function tickClock() {
     const d = new Date();
     const ist = new Date(d.getTime() + (5.5 * 60 - d.getTimezoneOffset()) * 60000);
     const hh = String(ist.getUTCHours()).padStart(2,'0');
     const mm = String(ist.getUTCMinutes()).padStart(2,'0');
-    const ss = String(ist.getUTCSeconds()).padStart(2,'0');
-    if (clockEl) clockEl.textContent = `${hh}:${mm}:${ss} IST`;
+    if (clockEl) clockEl.textContent = `${hh}:${mm} IST`;
   }
-  tickClock(); setInterval(tickClock, 1000);
+  tickClock(); setInterval(tickClock, 30000);
 
-  // Race-start lights sequence
-  const lamps = document.querySelectorAll('.lights .lamp');
-  const lightsLabel = document.getElementById('lightsLabel');
-  function runLights() {
-    lamps.forEach(l => l.classList.remove('on'));
-    if (lightsLabel) lightsLabel.textContent = '— Standby';
-    lamps.forEach((lamp, i) => {
-      setTimeout(() => {
-        lamp.classList.add('on');
-        if (lightsLabel) lightsLabel.textContent = `— Lights ${i+1} / 5`;
-      }, 600 + i * 420);
-    });
-    setTimeout(() => {
-      lamps.forEach(l => l.classList.remove('on'));
-      if (lightsLabel) lightsLabel.textContent = '— Lights out · GO';
-    }, 600 + 5 * 420 + 700);
-    setTimeout(runLights, 600 + 5 * 420 + 4500);
-  }
-  runLights();
+  // Top nav scroll state
+  const nav = document.getElementById('topnav');
+  document.addEventListener('scroll', () => {
+    if (window.scrollY > 40) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  }, { passive: true });
 
   // Reveal on scroll
   const io = new IntersectionObserver((entries) => {
@@ -1946,50 +1931,8 @@
         io.unobserve(e.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  }, { threshold: 0.10, rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  // Number counters
-  const counters = document.querySelectorAll('[data-count]');
-  const cIO = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      const el = e.target;
-      const target = parseFloat(el.dataset.count);
-      const decimals = parseInt(el.dataset.decimals || '0', 10);
-      const dur = 1500;
-      const start = performance.now();
-      function frame(now) {
-        const t = Math.min(1, (now - start) / dur);
-        const eased = 1 - Math.pow(1 - t, 3);
-        const v = target * eased;
-        el.textContent = v.toFixed(decimals);
-        if (t < 1) requestAnimationFrame(frame);
-      }
-      requestAnimationFrame(frame);
-      cIO.unobserve(el);
-    });
-  }, { threshold: 0.4 });
-  counters.forEach(c => cIO.observe(c));
-
-  // CTA magnetic-ish hover
-  document.querySelectorAll('.cta').forEach(btn => {
-    btn.addEventListener('mousemove', (e) => {
-      const r = btn.getBoundingClientRect();
-      const x = (e.clientX - r.left - r.width/2) / r.width;
-      const y = (e.clientY - r.top - r.height/2) / r.height;
-      btn.style.transform = `translate(${x * 6}px, ${y * 4}px)`;
-    });
-    btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
-  });
-
-  // Hero bolt parallax
-  const bolt = document.querySelector('.hero-bolt');
-  document.addEventListener('scroll', () => {
-    if (!bolt) return;
-    const y = window.scrollY;
-    bolt.style.transform = `rotate(${8 + y * 0.01}deg) translateY(${y * 0.15}px)`;
-  }, { passive: true });
 </script>
 </body>
 </html>
