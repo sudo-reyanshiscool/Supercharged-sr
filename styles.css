@@ -1682,3 +1682,202 @@ footer {
   .page-nav { grid-template-columns: 1fr; }
   .page-nav a.next { border-left: none; border-top: 1px solid var(--line); text-align: left; align-items: flex-start; }
 }
+
+/* ============================================================
+   DRIVERS PAGE · TEAM INTRO + BY-NUMBERS + STRUCTURE
+   (protomotors-inspired: narrative + transparent stats)
+============================================================ */
+.team-intro {
+  padding: 4rem 0 5rem;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.team-intro .label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin-bottom: 1.4rem;
+}
+.team-intro h2 {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--text);
+}
+.team-intro h2 em {
+  font-style: normal;
+  font-family: var(--font-display);
+  font-weight: 300;
+  color: var(--red);
+}
+.team-intro .copy p {
+  font-size: 1.05rem;
+  color: var(--text-2);
+  line-height: 1.6;
+  margin-bottom: 1.1rem;
+}
+.team-intro .copy p:last-child { margin-bottom: 0; }
+.team-intro .copy p em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--text);
+  border-bottom: 1px solid var(--red);
+}
+
+.by-numbers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin: 0 0 5rem;
+}
+.by-numbers .stat {
+  padding: 2.4rem 1.4rem;
+  border-right: 1px solid var(--line);
+  position: relative;
+  transition: background 0.3s;
+}
+.by-numbers .stat:last-child { border-right: none; }
+.by-numbers .stat:hover { background: var(--bg-2); }
+.by-numbers .stat .lbl {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+}
+.by-numbers .stat .val {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-size: clamp(2.5rem, 4.6vw, 4.6rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  margin-top: 0.6rem;
+}
+.by-numbers .stat .val .red { color: var(--red); }
+.by-numbers .stat .note {
+  margin-top: 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-2);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.team-structure {
+  margin-top: 5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--line);
+}
+.team-structure h3 {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin-bottom: 0.7rem;
+}
+.team-structure h3 + p.lede {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  color: var(--text);
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  margin-bottom: 2.5rem;
+  max-width: 56ch;
+}
+.struct-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.struct-card {
+  background: var(--bg);
+  padding: 2.2rem 2rem;
+  transition: background 0.3s;
+}
+.struct-card:hover { background: var(--bg-2); }
+.struct-card .label {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+.struct-card h4 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(1.7rem, 2.6vw, 2.4rem);
+  letter-spacing: -0.025em;
+  text-transform: lowercase;
+  margin-top: 0.5rem;
+  line-height: 1;
+}
+.struct-card .count {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  margin-top: 0.4rem;
+}
+.struct-card ul {
+  list-style: none;
+  margin-top: 1.6rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--line);
+  display: flex; flex-direction: column;
+  gap: 0.9rem;
+}
+.struct-card ul li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: baseline;
+  font-size: 1rem;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+.struct-card ul li small {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-weight: 400;
+}
+.struct-card .charter {
+  margin-top: 1.6rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line);
+  color: var(--text-2);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .team-intro { grid-template-columns: 1fr; gap: 2rem; }
+  .by-numbers { grid-template-columns: repeat(2, 1fr); }
+  .by-numbers .stat:nth-child(2) { border-right: none; }
+  .by-numbers .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .struct-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .by-numbers { grid-template-columns: 1fr; }
+  .by-numbers .stat { border-right: none; border-bottom: 1px solid var(--line); }
+  .by-numbers .stat:last-child { border-bottom: none; }
+}
