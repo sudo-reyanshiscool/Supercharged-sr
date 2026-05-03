@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dasher — The Car · Team Supercharged · T62</title>
+<meta name="description" content="Dasher: a 49-gram CO₂-powered F1 in Schools car designed in Fusion 360, simulated in Ansys, manufactured by CNC and SLS." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,300&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="bolt" viewBox="0 0 24 32"><path d="M14.5 0 L1 19 L9.5 19 L7 32 L23 11 L13 11 L17 0 Z" fill="currentColor"/></symbol></defs></svg>
+
+<header class="topnav" id="topnav">
+  <a href="index.html" class="mark"><svg class="bolt-mark" aria-hidden="true"><use href="#bolt"/></svg><span>Supercharged</span></a>
+  <nav class="menu" aria-label="Primary">
+    <a href="drivers.html"     data-num="01">Drivers</a>
+    <a href="beginnings.html"  data-num="02">Beginnings</a>
+    <a href="dasher.html"      class="active" data-num="03">Dasher</a>
+    <a href="innovations.html" data-num="04">Innovations</a>
+    <a href="race.html"        data-num="05">Race</a>
+    <a href="partners.html"    data-num="06">Partners</a>
+    <a href="engage.html"      data-num="07">Engage</a>
+  </nav>
+  <div class="topnav-right">
+    <div class="lang"><a href="#" class="on">EN</a><a href="#">HI</a></div>
+    <span id="liveClock">00:00 IST</span>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div>
+      <div class="page-hero-num">03 · Chapter</div>
+      <h1><span class="red">dasher</span>.<br/>a 49-gram argument<br/>for less.</h1>
+    </div>
+    <p class="page-hero-sub">Body inspired by the peregrine falcon. Front wing inspired by the Rafale's canard. CO₂ chamber aligned to within 5&nbsp;mm of the centre of mass — because rocket engineers don't accept tipping moments and neither do we.</p>
+  </div>
+</section>
+
+<main class="chapter">
+  <div class="container">
+    <figure class="machine-stage reveal d1" aria-label="Dasher technical schematic">
+      <svg class="car" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" role="img">
+        <line x1="20" y1="262" x2="780" y2="262" stroke="rgba(248,244,237,0.20)" stroke-dasharray="3 5"/>
+        <line x1="400" y1="20" x2="400" y2="300" stroke="rgba(245,5,46,0.18)" stroke-dasharray="2 6" stroke-width="0.8"/>
+        <rect x="46" y="206" width="78" height="6" fill="#F8F4ED"/>
+        <rect x="58" y="186" width="6" height="32" fill="#F8F4ED"/>
+        <rect x="106" y="186" width="6" height="32" fill="#F8F4ED"/>
+        <path d="M124 232 L210 200 L256 198 L256 248 L124 248 Z" fill="#F8F4ED" opacity="0.92"/>
+        <line x1="208" y1="200" x2="208" y2="248" stroke="#E7B922" stroke-width="2" stroke-dasharray="3 3"/>
+        <path d="M256 198 L370 188 L412 170 L546 170 L588 188 L676 198 L716 222 L716 242 L688 252 L666 252 L644 262 L568 262 L548 252 L298 252 L278 262 L202 262 L180 252 L158 252 L136 248 L124 244 L124 232 Z" fill="#F5052E"/>
+        <path d="M280 196 L370 188 L412 188 L412 222 L280 222 Z" fill="#050505" opacity="0.9"/>
+        <path d="M438 168 L500 152 L546 152 L546 170 L438 170 Z" fill="#1c1c1c"/>
+        <ellipse cx="436" cy="170" rx="40" ry="11" fill="#050505"/>
+        <circle cx="436" cy="160" r="13" fill="#F8F4ED"/>
+        <rect x="429" y="156" width="14" height="3" fill="#050505"/>
+        <path d="M414 152 L426 138 L446 138 L458 152 Z" fill="#F8F4ED" opacity="0.85"/>
+        <rect x="690" y="124" width="68" height="6" fill="#F8F4ED"/>
+        <rect x="690" y="124" width="6" height="58" fill="#F8F4ED"/>
+        <rect x="752" y="124" width="6" height="58" fill="#F8F4ED"/>
+        <rect x="690" y="174" width="68" height="6" fill="#F8F4ED"/>
+        <rect x="716" y="222" width="22" height="22" fill="#E7B922"/>
+        <rect x="720" y="226" width="14" height="14" fill="#050505"/>
+        <g>
+          <circle cx="216" cy="252" r="32" fill="#050505" stroke="#F8F4ED" stroke-width="1.5"/>
+          <circle cx="216" cy="252" r="22" fill="none" stroke="#F8F4ED" stroke-width="0.5" stroke-dasharray="2 2"/>
+          <circle cx="216" cy="252" r="16" fill="#1c1c1c" stroke="#F8F4ED" stroke-width="0.7"/>
+          <circle cx="216" cy="252" r="4" fill="#F5052E"/>
+        </g>
+        <g>
+          <circle cx="616" cy="252" r="36" fill="#050505" stroke="#F8F4ED" stroke-width="1.5"/>
+          <circle cx="616" cy="252" r="26" fill="none" stroke="#F8F4ED" stroke-width="0.5" stroke-dasharray="2 2"/>
+          <circle cx="616" cy="252" r="18" fill="#1c1c1c" stroke="#F8F4ED" stroke-width="0.7"/>
+          <circle cx="616" cy="252" r="4" fill="#F5052E"/>
+        </g>
+        <g stroke="rgba(248,244,237,0.4)" stroke-width="0.6" fill="rgba(248,244,237,0.65)">
+          <line x1="46" y1="296" x2="758" y2="296"/>
+          <line x1="46" y1="290" x2="46" y2="302"/>
+          <line x1="758" y1="290" x2="758" y2="302"/>
+        </g>
+        <text x="402" y="312" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#F8F4ED" letter-spacing="2">L = 210 MM (REGULATION MAX)</text>
+        <g stroke="rgba(245,5,46,0.6)" stroke-width="0.6" fill="rgba(245,5,46,0.85)">
+          <line x1="772" y1="124" x2="772" y2="262"/>
+          <line x1="766" y1="124" x2="778" y2="124"/>
+          <line x1="766" y1="262" x2="778" y2="262"/>
+        </g>
+        <text x="780" y="196" font-family="JetBrains Mono" font-size="9" fill="#F5052E" letter-spacing="1.5">H 65 MM</text>
+        <g font-family="JetBrains Mono" font-size="8" fill="rgba(248,244,237,0.55)" letter-spacing="1.5">
+          <text x="160" y="184" fill="#E7B922">N52 · MAGNET SEAM</text>
+          <line x1="208" y1="186" x2="208" y2="200" stroke="#E7B922" stroke-width="0.5"/>
+          <text x="408" y="128" fill="#E7B922">AEROFIN · HALO LIP</text>
+          <line x1="436" y1="132" x2="436" y2="142" stroke="#E7B922" stroke-width="0.5"/>
+          <text x="664" y="106">REAR WING · DUAL-ELEMENT</text>
+          <line x1="722" y1="110" x2="722" y2="124" stroke="rgba(248,244,237,0.4)" stroke-width="0.5"/>
+          <text x="666" y="226" fill="#E7B922">CO₂ · 8 g · ALIGNED</text>
+          <text x="216" y="296" text-anchor="middle">DBL BEARING</text>
+          <text x="616" y="296" text-anchor="middle">DBL BEARING</text>
+        </g>
+      </svg>
+    </figure>
+
+    <div class="machine-frame-meta reveal">
+      <span><b>DASHER</b> · CAR A / B</span>
+      <span class="ylw">SHEET 03 · 01</span>
+      <span>SCALE 1 : 1</span>
+      <span>FUSION 360 · ANSYS DISCOVERY · CNC + SLS</span>
+    </div>
+
+    <div class="specs-grid reveal" style="margin-top:3rem;">
+      <div class="spec"><div class="k">Body Length</div><div class="v">210 <small>mm</small></div></div>
+      <div class="spec"><div class="k">Width</div><div class="v">65 <small>mm</small></div></div>
+      <div class="spec"><div class="k">Race Mass</div><div class="v">49 <small>g · min 48</small></div></div>
+      <div class="spec"><div class="k">Best Track Time</div><div class="v red">1.330 <small>s</small></div></div>
+      <div class="spec"><div class="k">Min M.O.I.</div><div class="v">156.41 <small>g·mm²</small></div></div>
+    </div>
+
+    <!-- BUILD PROCESS -->
+    <div class="build-process reveal">
+      <h3>Build Process · Six Steps</h3>
+      <div class="build-grid">
+        <div class="build-step">
+          <span class="num">Step 01</span>
+          <div class="ttl">Regulation block</div>
+          <p class="desc">Imported the official model block in Fusion 360. Locked dimensions with parametric constraints.</p>
+        </div>
+        <div class="build-step">
+          <span class="num">Step 02</span>
+          <div class="ttl">Initial design</div>
+          <p class="desc">Splines and conic curves carved aerodynamic profiles into a half-block. Surface analysis kept airflow continuous.</p>
+        </div>
+        <div class="build-step">
+          <span class="num">Step 03</span>
+          <div class="ttl">Mirror &amp; offset</div>
+          <p class="desc">Mirrored the half body, controlled offsets slimmed regions for airflow, surface analysis confirmed alignment.</p>
+        </div>
+        <div class="build-step">
+          <span class="num">Step 04</span>
+          <div class="ttl">CO₂ chamber</div>
+          <p class="desc">Revolve cut to regulation, chamber linked to global parameters for instant tolerance adjustments.</p>
+        </div>
+        <div class="build-step">
+          <span class="num">Step 05</span>
+          <div class="ttl">CNC &amp; SLS</div>
+          <p class="desc">CNC machined at 1 mm stepover, 2300 RPM. SLS 3D printed wings and fittings. Hybrid wins.</p>
+        </div>
+        <div class="build-step">
+          <span class="num">Step 06</span>
+          <div class="ttl">Sand &amp; paint</div>
+          <p class="desc">220 grit → 400 → 1000 grit sanding. Layered paint with grit pass between coats. Mass kept to 49 g.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- KPI WEIGHTING -->
+    <div class="kpi-bars reveal">
+      <h3>Race Time Drivers · Weighted Contribution</h3>
+      <div class="kpi" style="--w: 41.7%;">
+        <div class="name">Car mass</div>
+        <div class="bar"></div>
+        <div class="pct">41.7 %</div>
+      </div>
+      <div class="kpi" style="--w: 29.2%;">
+        <div class="name">Aerodynamic drag</div>
+        <div class="bar"></div>
+        <div class="pct">29.2 %</div>
+      </div>
+      <div class="kpi" style="--w: 21.4%;">
+        <div class="name">Wheel friction</div>
+        <div class="bar"></div>
+        <div class="pct">21.4 %</div>
+      </div>
+      <div class="kpi" style="--w: 5.9%;">
+        <div class="name">Tether-line guide friction</div>
+        <div class="bar"></div>
+        <div class="pct">5.9 %</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<nav class="page-nav">
+  <a href="beginnings.html" class="prev">
+    <span class="dir">← previous chapter</span>
+    <span class="num">02</span>
+    <span class="ttl">the beginnings</span>
+  </a>
+  <a href="innovations.html" class="next">
+    <span class="dir">next chapter →</span>
+    <span class="num">04</span>
+    <span class="ttl">the innovations</span>
+  </a>
+</nav>
+
+<footer>
+  <div class="container">
+    <div class="foot-inner">
+      <div class="foot-brand">
+        supercharged.
+        <small>Team T62 · India · Aramco STEM Racing™ World Finals · 2025</small>
+      </div>
+      <div class="foot-col">
+        <h5>Chapters</h5>
+        <ul>
+          <li><a href="drivers.html">01 · Drivers</a></li>
+          <li><a href="beginnings.html">02 · Beginnings</a></li>
+          <li><a href="dasher.html">03 · Dasher</a></li>
+          <li><a href="innovations.html">04 · Innovations</a></li>
+          <li><a href="race.html">05 · Race</a></li>
+          <li><a href="partners.html">06 · Partners</a></li>
+          <li><a href="engage.html">07 · Engage</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Comms</h5>
+        <ul>
+          <li><a href="mailto:hello@superchargedf1.com">hello@superchargedf1.com</a></li>
+          <li><a href="mailto:press@superchargedf1.com">press@superchargedf1.com</a></li>
+          <li><a href="https://www.instagram.com/superchargedf1" target="_blank" rel="noopener">Instagram · @superchargedf1</a></li>
+          <li><a href="#">LinkedIn · /team-supercharged</a></li>
+          <li><a href="#">YouTube · @superchargedf1</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Garage</h5>
+        <ul>
+          <li>The British School</li>
+          <li>Chanakyapuri · New Delhi</li>
+          <li>India · IST + 5 : 30</li>
+          <li>Open hours · 16:00 — 19:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 Team Supercharged · T62 · All rights to the livery reserved</span>
+      <span>Aramco STEM Racing™ is a trademark of the F1 in Schools STEM Foundation</span>
+      <span>Site rev · 05 · 26</span>
+    </div>
+  </div>
+</footer>
+
+<script src="scripts.js"></script>
+</body>
+</html>
