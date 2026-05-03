@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SUPERCHARGED — STEM Racing™ World Finals · 2026</title>
+<meta name="description" content="SUPERCHARGED is a STEM Racing™ World Finals team engineering one of the fastest miniature Formula 1 cars on the planet." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,700;0,900;1,400&family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  /* --------------------------------------------------------------
+     SUPERCHARGED · STEM Racing World Finals 2026
+     Aesthetic: Industrial racing brutalism / engineered editorial
+  -------------------------------------------------------------- */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  ::selection { background: #FF4D00; color: #0A0A0B; }
+  html { scroll-behavior: smooth; }
+
+  :root {
+    --bg: #0A0A0B;
+    --bg-2: #121215;
+    --bg-3: #18181C;
+    --text: #F2EEE5;
+    --muted: #7A7A7E;
+    --muted-2: #4F4F54;
+    --line: rgba(242, 238, 229, 0.10);
+    --line-strong: rgba(242, 238, 229, 0.22);
+    --accent: #FF4D00;
+    --accent-soft: rgba(255, 77, 0, 0.10);
+    --hot: #FFD60A;
+    --pad: clamp(1.25rem, 4vw, 3.5rem);
+    --max: 1480px;
+    --font-display: 'Bebas Neue', 'Archivo Black', sans-serif;
+    --font-body: 'Archivo', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.55;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "ss01", "cv05";
+  }
+
+  /* Film grain overlay */
+  .grain {
+    position: fixed; inset: 0;
+    pointer-events: none; z-index: 1000;
+    opacity: 0.06;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.85'/></svg>");
+  }
+
+  /* Background subtle grid */
+  body::before {
+    content: ""; position: fixed; inset: 0;
+    background-image:
+      linear-gradient(to right, var(--line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+    background-size: 90px 90px;
+    pointer-events: none;
+    z-index: 0;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 90%);
+  }
+
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+  img, svg { display: block; max-width: 100%; }
+
+  .mono { font-family: var(--font-mono); letter-spacing: 0.02em; }
+  .muted { color: var(--muted); }
+  .upper { text-transform: uppercase; letter-spacing: 0.14em; }
+
+  .container {
+    max-width: var(--max); margin: 0 auto;
+    padding: 0 var(--pad);
+    position: relative; z-index: 1;
+  }
+
+  /* ===== TOP NAV ===== */
+  .topnav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+    align-items: center;
+    padding: 1rem var(--pad);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(10, 10, 11, 0.55);
+    border-bottom: 1px solid var(--line);
+    font-size: 0.72rem;
+    transition: background 0.3s;
+  }
+
+  .mark {
+    display: flex; align-items: center; gap: 0.7rem;
+  }
+  .mark-glyph {
+    width: 36px; height: 36px;
+    border: 1.5px solid var(--text);
+    display: grid; place-items: center;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    line-height: 1; letter-spacing: 0.04em;
+    position: relative;
+  }
+  .mark-glyph::after {
+    content: ""; position: absolute;
+    inset: -4px; border: 1px dashed var(--line-strong);
+    pointer-events: none;
+  }
+  .mark-meta { display: flex; flex-direction: column; line-height: 1.1; }
+  .mark-meta strong { font-family: var(--font-display); letter-spacing: 0.06em; font-size: 1rem; }
+  .mark-meta span { color: var(--muted); font-size: 0.65rem; }
+
+  .menu {
+    display: flex; gap: 1.6rem;
+    text-transform: uppercase; letter-spacing: 0.18em;
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+  .menu a {
+    position: relative; padding: 0.5rem 0;
+    transition: color 0.2s;
+  }
+  .menu a::before {
+    content: attr(data-num);
+    color: var(--accent); margin-right: 0.45rem;
+    font-family: var(--font-mono); font-size: 0.62rem;
+    opacity: 0.7;
+  }
+  .menu a:hover { color: var(--accent); }
+
+  .status {
+    display: flex; align-items: center; justify-content: flex-end;
+    gap: 0.6rem; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.16em;
+    font-family: var(--font-mono); font-size: 0.66rem;
+  }
+  .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 0 var(--accent);
+    animation: pulse 1.6s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 77, 0, 0.6); }
+    70% { box-shadow: 0 0 0 9px rgba(255, 77, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 77, 0, 0); }
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    padding: 7rem var(--pad) 0;
+    display: flex; flex-direction: column;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .hero-meta {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    font-family: var(--font-mono); font-size: 0.7rem;
+    color: var(--muted);
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--line);
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .hero-meta strong { color: var(--text); margin-right: 0.5rem; }
+  .hero-meta .acc { color: var(--accent); }
+
+  /* Race start lights */
+  .lights {
+    display: flex; gap: 0.4rem;
+    align-items: center;
+    margin: 1.4rem 0 0.6rem;
+  }
+  .lights .lamp {
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: #2a2226;
+    border: 1px solid #3a2c2c;
+    transition: all 0.3s;
+  }
+  .lights .lamp.on { background: var(--accent); box-shadow: 0 0 14px var(--accent), 0 0 30px rgba(255,77,0,0.4); border-color: var(--accent); }
+  .lights .label {
+    margin-left: 1rem;
+    font-family: var(--font-mono); font-size: 0.7rem;
+    color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.18em;
+  }
+
+  .hero-title {
+    margin-top: 1.5rem;
+    font-family: var(--font-display);
+    font-size: clamp(5rem, 18vw, 17.5rem);
+    line-height: 0.84;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+  }
+  .hero-title .line {
+    display: block;
+    transform: translateY(110%);
+    opacity: 0;
+    animation: rise 1.1s cubic-bezier(.2,.8,.2,1) 0.4s forwards;
+  }
+  .hero-title .line:nth-child(2) { animation-delay: 0.55s; color: var(--bg); -webkit-text-stroke: 1.5px var(--text); }
+  @keyframes rise { to { transform: translateY(0); opacity: 1; } }
+
+  .hero-foot {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 2.5rem;
+    align-items: end;
+    padding: 2rem 0 1.4rem;
+    border-top: 1px solid var(--line);
+    margin-top: 1.5rem;
+  }
+  .dim {
+    display: flex; flex-direction: column;
+    font-family: var(--font-mono); line-height: 1.2;
+  }
+  .dim .big { font-size: 1.05rem; color: var(--text); letter-spacing: 0.04em; }
+  .dim .small { font-size: 0.66rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.18em; }
+  .dim .acc { color: var(--accent); }
+
+  .hero-words {
+    max-width: 28rem;
+    color: var(--muted);
+    font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+    line-height: 1.5;
+  }
+  .hero-words em {
+    font-style: normal; color: var(--text);
+    border-bottom: 1px solid var(--accent);
+  }
+
+  /* Floating accent shape */
+  .hero-shape {
+    position: absolute;
+    right: -4vw; top: 35%;
+    width: 36vw; aspect-ratio: 1/1;
+    background: radial-gradient(circle at center, rgba(255,77,0,0.18), rgba(255,77,0,0) 65%);
+    filter: blur(20px);
+    z-index: -1;
+    animation: drift 14s ease-in-out infinite alternate;
+  }
+  @keyframes drift {
+    from { transform: translate(0,0) scale(1); }
+    to { transform: translate(-3%, 4%) scale(1.08); }
+  }
+
+  /* Vertical side label */
+  .side-label {
+    position: absolute;
+    left: calc(var(--pad) - 0.4rem); top: 50%;
+    transform: rotate(-90deg) translateX(50%);
+    transform-origin: left center;
+    font-family: var(--font-mono); font-size: 0.62rem;
+    color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.4em;
+    white-space: nowrap;
+  }
+
+  /* Ticker */
+  .ticker {
+    margin-top: auto;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 0.9rem 0;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(180deg, transparent, rgba(255,77,0,0.04));
+  }
+  .ticker-track {
+    display: flex; gap: 3.5rem;
+    width: max-content;
+    animation: ticker 40s linear infinite;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    align-items: center;
+  }
+  .ticker-track span { color: var(--text); display: inline-flex; align-items: center; gap: 1rem; }
+  .ticker-track span::before { content: "▲"; color: var(--accent); font-size: 0.7em; }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ===== SECTIONS ===== */
+  section {
+    padding: clamp(5rem, 11vh, 9rem) 0;
+    position: relative;
+  }
+
+  .section-head {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.4rem 2.8rem;
+    align-items: end;
+    padding-bottom: 2.4rem;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 3rem;
+  }
+  .section-num {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 9vw, 8rem);
+    line-height: 0.85;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+  }
+  .section-num span { color: var(--text); -webkit-text-stroke: 1.2px var(--text); color: transparent; }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.3rem, 4.6vw, 4.6rem);
+    text-transform: uppercase; letter-spacing: 0.01em;
+    line-height: 0.95;
+  }
+  .section-kicker {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase; letter-spacing: 0.22em;
+    color: var(--muted);
+    grid-column: 2;
+    margin-bottom: 0.4rem;
+  }
+
+  /* ===== MANIFESTO ===== */
+  .manifesto-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: start;
+  }
+  .manifesto p.lede {
+    font-size: clamp(1.4rem, 2.2vw, 1.95rem);
+    line-height: 1.3;
+    font-weight: 400;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+  .manifesto p.lede em {
+    font-style: italic;
+    color: var(--accent);
+    font-family: 'Archivo', serif;
+  }
+  .manifesto-side {
+    display: flex; flex-direction: column; gap: 2rem;
+    border-left: 1px solid var(--line);
+    padding-left: clamp(1rem, 3vw, 2.5rem);
+  }
+  .manifesto-side h4 {
+    font-family: var(--font-mono);
+    font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+  .manifesto-side p { color: var(--muted); font-size: 0.95rem; }
+
+  .pull {
+    margin-top: 4rem;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 2rem 0;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+  .pull blockquote {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3.6vw, 3.4rem);
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.005em;
+  }
+  .pull blockquote span { color: var(--accent); }
+  .pull .pull-meta {
+    font-family: var(--font-mono); font-size: 0.66rem;
+    color: var(--muted); text-transform: uppercase; letter-spacing: 0.2em;
+    text-align: right;
+  }
+
+  /* ===== MACHINE ===== */
+  .machine {
+    background: radial-gradient(ellipse at top right, rgba(255,77,0,0.06), transparent 50%), var(--bg);
+  }
+  .machine-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: start;
+  }
+  .blueprint {
+    position: relative;
+    border: 1px solid var(--line-strong);
+    padding: 2rem;
+    background:
+      linear-gradient(135deg, rgba(255,77,0,0.02), transparent 60%),
+      var(--bg-2);
+    aspect-ratio: 16/10;
+    overflow: hidden;
+  }
+  .blueprint::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(242,238,229,0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(242,238,229,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+  .blueprint .corners {
+    position: absolute; inset: 8px;
+    pointer-events: none;
+  }
+  .blueprint .corners::before,
+  .blueprint .corners::after {
+    content: ""; position: absolute;
+    width: 18px; height: 18px;
+    border: 1px solid var(--accent);
+  }
+  .blueprint .corners::before { top: 0; left: 0; border-right: none; border-bottom: none; }
+  .blueprint .corners::after { bottom: 0; right: 0; border-left: none; border-top: none; }
+  .blueprint .car-svg {
+    position: relative;
+    width: 100%; height: 100%;
+  }
+  .blueprint-meta {
+    position: absolute; bottom: 1rem; left: 1rem; right: 1rem;
+    display: flex; justify-content: space-between;
+    font-family: var(--font-mono); font-size: 0.62rem;
+    color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.22em;
+    pointer-events: none;
+  }
+  .blueprint-meta b { color: var(--accent); font-weight: 700; }
+
+  .specs {
+    display: flex; flex-direction: column;
+    border: 1px solid var(--line);
+  }
+  .spec-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid var(--line);
+    align-items: baseline;
+    transition: background 0.2s, padding-left 0.3s;
+  }
+  .spec-row:last-child { border-bottom: none; }
+  .spec-row:hover { background: rgba(255,77,0,0.04); padding-left: 1.6rem; }
+  .spec-row .key {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+  }
+  .spec-row .key::before {
+    content: attr(data-i) "·";
+    color: var(--accent);
+    margin-right: 0.5rem;
+  }
+  .spec-row .dots {
+    border-bottom: 1px dashed var(--line-strong);
+    height: 1px;
+    align-self: end;
+    margin-bottom: 0.4rem;
+  }
+  .spec-row .val {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+  .spec-row .val small { font-family: var(--font-mono); font-size: 0.65rem; color: var(--muted); margin-left: 0.2rem; letter-spacing: 0.18em; }
+
+  /* ===== CREW ===== */
+  .crew-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .crew-card {
+    background: var(--bg);
+    padding: 1.6rem 1.4rem 1.4rem;
+    position: relative;
+    transition: background 0.3s, color 0.3s;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    display: flex; flex-direction: column;
+    justify-content: space-between;
+  }
+  .crew-card:hover { background: var(--accent); color: var(--bg); }
+  .crew-card:hover .crew-num { color: var(--bg); border-color: var(--bg); }
+  .crew-card:hover .crew-role { color: var(--bg); }
+  .crew-card:hover .crew-portrait { opacity: 1; transform: scale(1.05); }
+  .crew-card:hover .crew-bio { color: var(--bg); opacity: 0.85; }
+
+  .crew-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 1rem;
+  }
+  .crew-num {
+    font-family: var(--font-display); font-size: 1.6rem;
+    line-height: 1;
+    border: 1px solid var(--line-strong);
+    padding: 0.4rem 0.7rem 0.2rem;
+    color: var(--muted);
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .crew-portrait {
+    width: 58%;
+    aspect-ratio: 1/1.15;
+    margin: 1.2rem auto 0;
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    position: relative;
+    transition: opacity 0.4s, transform 0.4s;
+    opacity: 0.85;
+  }
+  .crew-portrait::before {
+    content: ""; position: absolute; inset: 8px;
+    background:
+      radial-gradient(circle at 50% 38%, rgba(242,238,229,0.18), transparent 36%),
+      linear-gradient(180deg, rgba(255,77,0,0.10) 0%, transparent 60%, rgba(0,0,0,0.4));
+  }
+  .crew-portrait::after {
+    content: attr(data-init);
+    position: absolute; inset: 0;
+    display: grid; place-items: center;
+    font-family: var(--font-display); font-size: 3.6rem;
+    color: rgba(242,238,229,0.7);
+    letter-spacing: 0.04em;
+    mix-blend-mode: overlay;
+  }
+  .crew-bottom { margin-top: auto; }
+  .crew-role {
+    font-family: var(--font-mono);
+    font-size: 0.66rem; color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.18em;
+    margin-bottom: 0.45rem;
+    transition: color 0.2s;
+  }
+  .crew-name {
+    font-family: var(--font-display);
+    font-size: 1.55rem; line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  .crew-bio {
+    margin-top: 0.6rem;
+    font-size: 0.78rem; color: var(--muted);
+    line-height: 1.45;
+    transition: color 0.2s, opacity 0.2s;
+  }
+
+  /* ===== PERFORMANCE BAND ===== */
+  .perf {
+    background: var(--text); color: var(--bg);
+    padding: clamp(3rem, 7vw, 6rem) 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .perf::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(135deg,
+      transparent 0, transparent 22px,
+      rgba(10,10,11,0.05) 22px, rgba(10,10,11,0.05) 44px);
+    pointer-events: none;
+  }
+  .perf-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(10,10,11,0.12);
+    border-top: 1px solid rgba(10,10,11,0.12);
+    border-bottom: 1px solid rgba(10,10,11,0.12);
+  }
+  .perf-cell {
+    background: var(--text);
+    padding: 2rem 1.5rem;
+    display: flex; flex-direction: column; gap: 0.6rem;
+    position: relative;
+  }
+  .perf-cell .pk {
+    font-family: var(--font-mono);
+    font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.22em;
+    color: rgba(10,10,11,0.55);
+  }
+  .perf-cell .pv {
+    font-family: var(--font-display);
+    font-size: clamp(2.6rem, 5.5vw, 5.6rem);
+    line-height: 0.9; letter-spacing: 0.01em;
+  }
+  .perf-cell .pu {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.18em;
+  }
+  .perf-cell::before {
+    content: attr(data-i);
+    position: absolute; top: 0.7rem; right: 1rem;
+    font-family: var(--font-mono); font-size: 0.62rem;
+    color: rgba(10,10,11,0.4);
+  }
+
+  .perf-foot {
+    display: flex; justify-content: space-between;
+    margin-top: 1.6rem;
+    font-family: var(--font-mono); font-size: 0.7rem;
+    color: rgba(10,10,11,0.6);
+    text-transform: uppercase; letter-spacing: 0.18em;
+    flex-wrap: wrap; gap: 0.6rem;
+  }
+
+  /* ===== RACE LOG (TIMELINE) ===== */
+  .log-wrap {
+    display: grid;
+    grid-template-columns: 1fr 2.2fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+  .log-side p {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  .log-side .badge {
+    display: inline-block;
+    margin-top: 1.5rem;
+    border: 1px solid var(--accent);
+    padding: 0.5rem 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.22em;
+  }
+
+  .timeline {
+    position: relative;
+    border-left: 1px solid var(--line-strong);
+    padding-left: 2rem;
+  }
+  .ev {
+    position: relative;
+    padding: 1rem 0 2.3rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .ev:last-child { border-bottom: none; }
+  .ev::before {
+    content: "";
+    position: absolute; left: -2.4rem; top: 1.4rem;
+    width: 12px; height: 12px;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+    transform: rotate(45deg);
+  }
+  .ev.now::before { background: var(--accent); box-shadow: 0 0 0 4px rgba(255,77,0,0.18); }
+  .ev .ev-date {
+    font-family: var(--font-mono); font-size: 0.7rem;
+    color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.18em;
+    margin-bottom: 0.4rem;
+  }
+  .ev .ev-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 2.4vw, 2rem);
+    text-transform: uppercase; letter-spacing: 0.01em;
+    line-height: 1.05;
+  }
+  .ev .ev-body {
+    margin-top: 0.5rem;
+    color: var(--muted);
+    max-width: 50ch;
+    font-size: 0.92rem;
+  }
+  .ev .ev-stat {
+    display: inline-flex; gap: 0.6rem; margin-top: 0.7rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text);
+    border: 1px solid var(--line);
+    padding: 0.3rem 0.6rem;
+    text-transform: uppercase; letter-spacing: 0.16em;
+  }
+  .ev .ev-stat strong { color: var(--accent); }
+
+  /* ===== PARTNERS ===== */
+  .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .partner {
+    background: var(--bg);
+    padding: 2rem 1rem;
+    aspect-ratio: 16/9;
+    display: grid; place-items: center;
+    transition: background 0.3s;
+    text-align: center;
+    position: relative;
+  }
+  .partner:hover { background: var(--bg-2); }
+  .partner span {
+    font-family: var(--font-display);
+    font-size: clamp(1.1rem, 1.5vw, 1.55rem);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    transition: color 0.2s, letter-spacing 0.3s;
+  }
+  .partner:hover span { color: var(--text); letter-spacing: 0.08em; }
+  .partner .tier {
+    position: absolute; top: 0.6rem; left: 0.7rem;
+    font-family: var(--font-mono); font-size: 0.6rem;
+    color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.22em;
+  }
+
+  .partners-cta {
+    margin-top: 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 1.5rem; flex-wrap: wrap;
+    border-top: 1px solid var(--line);
+    padding-top: 1.4rem;
+    color: var(--muted);
+    font-family: var(--font-mono); font-size: 0.74rem;
+    text-transform: uppercase; letter-spacing: 0.18em;
+  }
+  .partners-cta a { color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
+
+  /* ===== ENGAGE / CTA ===== */
+  .engage {
+    background: var(--bg);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: clamp(5rem, 11vw, 9rem) 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .engage::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 80% 50%, rgba(255,77,0,0.16), transparent 45%),
+      radial-gradient(circle at 10% 30%, rgba(255,214,10,0.06), transparent 40%);
+    pointer-events: none;
+  }
+  .engage-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: end;
+    position: relative;
+  }
+  .engage h2 {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 9.5vw, 9.5rem);
+    line-height: 0.85;
+    text-transform: uppercase; letter-spacing: 0.005em;
+  }
+  .engage h2 .out { -webkit-text-stroke: 1.5px var(--text); color: transparent; }
+  .engage h2 .acc { color: var(--accent); }
+  .engage-body { max-width: 32rem; color: var(--muted); margin-top: 1.4rem; font-size: 1rem; }
+
+  .cta-stack {
+    display: flex; flex-direction: column; gap: 0.6rem; align-items: stretch;
+    min-width: min(300px, 80vw);
+  }
+  .cta {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem;
+    border: 1px solid var(--line-strong);
+    padding: 1rem 1.2rem;
+    transition: all 0.25s;
+    font-family: var(--font-mono); font-size: 0.78rem;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    cursor: pointer;
+  }
+  .cta:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); transform: translateX(-3px); }
+  .cta .arr { font-family: var(--font-display); font-size: 1.2rem; }
+  .cta.primary { background: var(--text); color: var(--bg); border-color: var(--text); }
+  .cta.primary:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--bg);
+    padding: 3rem 0 2.5rem;
+    border-top: 1px solid var(--line);
+    position: relative;
+    z-index: 1;
+  }
+  .foot-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  .foot-brand {
+    font-family: var(--font-display);
+    font-size: 2.3rem; line-height: 0.9;
+    text-transform: uppercase;
+  }
+  .foot-brand small {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.2em;
+    margin-top: 0.5rem;
+  }
+  .foot-col h5 {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase; letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 0.8rem;
+  }
+  .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+  .foot-col a { color: var(--muted); font-size: 0.85rem; transition: color 0.2s; }
+  .foot-col a:hover { color: var(--text); }
+
+  .foot-bottom {
+    margin-top: 3rem; padding-top: 1.4rem;
+    border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; gap: 1rem;
+    font-family: var(--font-mono); font-size: 0.7rem;
+    color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.18em;
+    flex-wrap: wrap;
+  }
+
+  /* ===== REVEAL ANIMATIONS ===== */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s ease, transform 0.9s cubic-bezier(.2,.8,.2,1); }
+  .reveal.in { opacity: 1; transform: none; }
+  .reveal.d1 { transition-delay: 0.08s; }
+  .reveal.d2 { transition-delay: 0.16s; }
+  .reveal.d3 { transition-delay: 0.24s; }
+  .reveal.d4 { transition-delay: 0.32s; }
+  .reveal.d5 { transition-delay: 0.4s; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 980px) {
+    .topnav { grid-template-columns: 1fr auto; }
+    .menu { display: none; }
+    .hero-foot { grid-template-columns: 1fr; gap: 1.5rem; }
+    .manifesto-grid { grid-template-columns: 1fr; }
+    .manifesto-side { border-left: none; border-top: 1px solid var(--line); padding-left: 0; padding-top: 1.5rem; }
+    .machine-grid { grid-template-columns: 1fr; }
+    .perf-grid { grid-template-columns: repeat(2, 1fr); }
+    .log-wrap { grid-template-columns: 1fr; }
+    .engage-inner { grid-template-columns: 1fr; }
+    .foot-inner { grid-template-columns: 1fr 1fr; }
+    .pull { grid-template-columns: 1fr; gap: 1rem; }
+    .pull .pull-meta { text-align: left; }
+  }
+  @media (max-width: 540px) {
+    .perf-grid { grid-template-columns: 1fr; }
+    .foot-inner { grid-template-columns: 1fr; }
+    .section-head { grid-template-columns: 1fr; }
+    .section-kicker { grid-column: 1; }
+    .hero { padding-top: 5.5rem; }
+    .lights .lamp { width: 14px; height: 14px; }
+    .crew-card { aspect-ratio: auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============================================================
+     TOP NAV
+============================================================ -->
+<header class="topnav">
+  <a href="#top" class="mark" aria-label="SUPERCHARGED home">
+    <div class="mark-glyph">SR</div>
+    <div class="mark-meta">
+      <strong>SUPERCHARGED</strong>
+      <span>STEM Racing™ · 2026</span>
+    </div>
+  </a>
+  <nav class="menu" aria-label="Primary">
+    <a href="#manifesto" data-num="01">Manifesto</a>
+    <a href="#machine"   data-num="02">Machine</a>
+    <a href="#crew"      data-num="03">Crew</a>
+    <a href="#log"       data-num="04">Race Log</a>
+    <a href="#partners"  data-num="05">Partners</a>
+    <a href="#engage"    data-num="06">Engage</a>
+  </nav>
+  <div class="status">
+    <span class="dot" aria-hidden="true"></span>
+    <span>Pit Wall · <span id="liveClock">00:00:00 UTC</span></span>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="hero" id="top">
+  <div class="hero-shape" aria-hidden="true"></div>
+  <span class="side-label" aria-hidden="true">Dossier · 026 / Class · Pro / Status · Active</span>
+
+  <div class="hero-meta">
+    <div><strong>Dossier</strong>26·<span class="acc">SR</span></div>
+    <div>STEM Racing™ World Finals</div>
+    <div>Singapore <span class="acc">·</span> 09 / 2026</div>
+  </div>
+
+  <div class="lights" aria-hidden="true">
+    <div class="lamp" data-l="1"></div>
+    <div class="lamp" data-l="2"></div>
+    <div class="lamp" data-l="3"></div>
+    <div class="lamp" data-l="4"></div>
+    <div class="lamp" data-l="5"></div>
+    <span class="label" id="lightsLabel">— Standby</span>
+  </div>
+
+  <h1 class="hero-title" aria-label="Supercharged">
+    <span class="line">Super</span>
+    <span class="line">Charged</span>
+  </h1>
+
+  <div class="hero-foot">
+    <div class="dim">
+      <span class="big">210·MM</span>
+      <span class="small">Body Length</span>
+    </div>
+    <div class="hero-words">
+      <p>Eighteen months of CFD, CNC, telemetry and tape. We build the world's <em>fastest miniature Formula 1 car</em> — engineered, raced and re-engineered until the stopwatch refuses to tick any lower.</p>
+    </div>
+    <div class="dim" style="text-align:right;">
+      <span class="big" style="color: var(--accent)">≈ 1.04·s</span>
+      <span class="small">Race Time / 22.4 m</span>
+    </div>
+  </div>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>0–80 KM/H IN &lt; 0.95 s</span>
+      <span>22.4 M Track</span>
+      <span>Mass · 55 g Min</span>
+      <span>CO₂ Dragster Class</span>
+      <span>Top 24 of 17,000 + Teams</span>
+      <span>Singapore · September 2026</span>
+      <span>0–80 KM/H IN &lt; 0.95 s</span>
+      <span>22.4 M Track</span>
+      <span>Mass · 55 g Min</span>
+      <span>CO₂ Dragster Class</span>
+      <span>Top 24 of 17,000 + Teams</span>
+      <span>Singapore · September 2026</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     01 — MANIFESTO
+============================================================ -->
+<section id="manifesto" class="manifesto">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-num"><span>0</span>1</div>
+      <div>
+        <div class="section-kicker">Doctrine · Why we build</div>
+        <h2 class="section-title">A garage is a thesis statement</h2>
+      </div>
+    </div>
+
+    <div class="manifesto-grid">
+      <div class="reveal d1">
+        <p class="lede">SUPERCHARGED is six engineers who refuse to round numbers up. We treat <em>every gram, every micron and every millisecond</em> as an open question — and the answer is always to build it again, lighter, sharper, faster.</p>
+
+        <p class="lede" style="margin-top:1.4rem;">We design in CAD, validate in CFD, machine on a 3-axis CNC, and prove the work on the 22.4 metre track at <em>1.04 seconds wide open</em>. Then we tear it down and start over.</p>
+      </div>
+
+      <aside class="manifesto-side reveal d2">
+        <div>
+          <h4>Method</h4>
+          <p>CFD-driven aero. CNC and SLA hybrid manufacture. Vibration-damped axle assembly. Full telemetry on every test pass.</p>
+        </div>
+        <div>
+          <h4>Discipline</h4>
+          <p>Three test windows weekly. Drag coefficient logged per iteration. Nothing leaves the bench without a measured improvement over the last car.</p>
+        </div>
+        <div>
+          <h4>Pedigree</h4>
+          <p>Regional champion → national finalist → World Finals selection 2026. 17,000+ teams enter the STEM Racing pipeline globally. We're now in the top 24.</p>
+        </div>
+      </aside>
+    </div>
+
+    <div class="pull reveal">
+      <div class="mono small upper" style="color:var(--accent)">Article · I</div>
+      <blockquote>"Speed is a <span>byproduct</span> of being honest with the data."</blockquote>
+      <div class="pull-meta">— Team Charter<br/>Rev. 04 · 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     02 — THE MACHINE
+============================================================ -->
+<section id="machine" class="machine">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-num"><span>0</span>2</div>
+      <div>
+        <div class="section-kicker">Vehicle · SR-Mk IV "Onyx"</div>
+        <h2 class="section-title">A 55-gram argument<br/>for less</h2>
+      </div>
+    </div>
+
+    <div class="machine-grid">
+      <figure class="blueprint reveal d1">
+        <div class="corners"></div>
+        <svg class="car-svg" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SR Mk IV technical view">
+          <!-- baseline -->
+          <line x1="20" y1="262" x2="780" y2="262" stroke="rgba(242,238,229,0.20)" stroke-dasharray="3 5"/>
+
+          <!-- centerline -->
+          <line x1="400" y1="20" x2="400" y2="300" stroke="rgba(255,77,0,0.18)" stroke-dasharray="2 6" stroke-width="0.8"/>
+
+          <!-- front wing -->
+          <rect x="46" y="206" width="78" height="6" fill="#F2EEE5"/>
+          <rect x="58" y="186" width="6" height="32" fill="#F2EEE5"/>
+          <rect x="106" y="186" width="6" height="32" fill="#F2EEE5"/>
+
+          <!-- nose cone -->
+          <path d="M124 232 L210 200 L256 198 L256 248 L124 248 Z" fill="#FF4D00"/>
+
+          <!-- main body -->
+          <path d="M256 198 L370 188 L412 170 L546 170 L588 188 L676 198 L716 222 L716 242 L688 252 L666 252 L644 262 L568 262 L548 252 L298 252 L278 262 L202 262 L180 252 L158 252 L136 248 L124 244 L124 232 Z" fill="#FF4D00"/>
+
+          <!-- sidepod cut -->
+          <path d="M280 196 L370 188 L412 188 L412 222 L280 222 Z" fill="#0A0A0B" opacity="0.85"/>
+
+          <!-- engine cover ridge -->
+          <path d="M438 168 L500 152 L546 152 L546 170 L438 170 Z" fill="#0A0A0B" opacity="0.5"/>
+
+          <!-- cockpit / driver -->
+          <ellipse cx="436" cy="170" rx="40" ry="11" fill="#0A0A0B"/>
+          <circle cx="436" cy="160" r="13" fill="#F2EEE5"/>
+          <rect x="429" y="156" width="14" height="3" fill="#0A0A0B"/>
+
+          <!-- rear wing -->
+          <rect x="690" y="124" width="68" height="6" fill="#F2EEE5"/>
+          <rect x="690" y="124" width="6" height="58" fill="#F2EEE5"/>
+          <rect x="752" y="124" width="6" height="58" fill="#F2EEE5"/>
+          <rect x="690" y="174" width="68" height="6" fill="#F2EEE5"/>
+
+          <!-- CO2 cartridge port -->
+          <rect x="716" y="222" width="22" height="22" fill="#FFD60A"/>
+          <rect x="720" y="226" width="14" height="14" fill="#0A0A0B"/>
+
+          <!-- wheels -->
+          <g>
+            <circle cx="216" cy="252" r="32" fill="#0A0A0B" stroke="#F2EEE5" stroke-width="2"/>
+            <circle cx="216" cy="252" r="16" fill="#1A1A1C" stroke="#F2EEE5" stroke-width="1"/>
+            <circle cx="216" cy="252" r="4" fill="#FF4D00"/>
+          </g>
+          <g>
+            <circle cx="616" cy="252" r="36" fill="#0A0A0B" stroke="#F2EEE5" stroke-width="2"/>
+            <circle cx="616" cy="252" r="18" fill="#1A1A1C" stroke="#F2EEE5" stroke-width="1"/>
+            <circle cx="616" cy="252" r="4" fill="#FF4D00"/>
+          </g>
+
+          <!-- dimension callouts: length -->
+          <g stroke="rgba(242,238,229,0.6)" stroke-width="0.8" fill="rgba(242,238,229,0.7)">
+            <line x1="46" y1="296" x2="758" y2="296"/>
+            <line x1="46" y1="290" x2="46" y2="302"/>
+            <line x1="758" y1="290" x2="758" y2="302"/>
+          </g>
+          <text x="402" y="312" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#F2EEE5" letter-spacing="2">L = 210·MM</text>
+
+          <!-- height callout -->
+          <g stroke="rgba(255,77,0,0.7)" stroke-width="0.8" fill="rgba(255,77,0,0.9)">
+            <line x1="772" y1="124" x2="772" y2="262"/>
+            <line x1="766" y1="124" x2="778" y2="124"/>
+            <line x1="766" y1="262" x2="778" y2="262"/>
+          </g>
+          <text x="780" y="196" font-family="JetBrains Mono" font-size="9" fill="#FF4D00" letter-spacing="1.5">H 65 MM</text>
+
+          <!-- tag labels -->
+          <g font-family="JetBrains Mono" font-size="8" fill="rgba(242,238,229,0.55)" letter-spacing="1.5">
+            <text x="86" y="178">FRONT WING · Δ-1</text>
+            <line x1="86" y1="184" x2="86" y2="200" stroke="rgba(242,238,229,0.4)" stroke-width="0.5"/>
+
+            <text x="442" y="138">COCKPIT · K-3</text>
+            <line x1="438" y1="142" x2="438" y2="148" stroke="rgba(242,238,229,0.4)" stroke-width="0.5"/>
+
+            <text x="664" y="106">REAR WING · Δ-2</text>
+            <line x1="722" y1="110" x2="722" y2="124" stroke="rgba(242,238,229,0.4)" stroke-width="0.5"/>
+
+            <text x="666" y="226" fill="rgba(255,214,10,0.85)">CO₂ · 8g</text>
+          </g>
+
+          <!-- crosshair markers at corners -->
+          <g stroke="rgba(255,77,0,0.7)" stroke-width="0.8">
+            <line x1="14" y1="14" x2="26" y2="14"/>
+            <line x1="14" y1="14" x2="14" y2="26"/>
+            <line x1="786" y1="14" x2="774" y2="14"/>
+            <line x1="786" y1="14" x2="786" y2="26"/>
+          </g>
+        </svg>
+        <div class="blueprint-meta">
+          <span><b>SR-IV</b> · ONYX</span>
+          <span>SHEET 02 / 04</span>
+          <span>SCALE 1 : 1</span>
+        </div>
+      </figure>
+
+      <div class="specs reveal d2">
+        <div class="spec-row">
+          <span class="key" data-i="01">Body Length</span>
+          <span class="dots"></span>
+          <span class="val">210<small>mm</small></span>
+        </div>
+        <div class="spec-row">
+          <span class="key" data-i="02">Width</span>
+          <span class="dots"></span>
+          <span class="val">65<small>mm</small></span>
+        </div>
+        <div class="spec-row">
+          <span class="key" data-i="03">Wheelbase</span>
+          <span class="dots"></span>
+          <span class="val">147<small>mm</small></span>
+        </div>
+        <div class="spec-row">
+          <span class="key" data-i="04">Mass</span>
+          <span class="dots"></span>
+          <span class="val">55<small>g</small></span>
+        </div>
+        <div class="spec-row">
+          <span class="key" data-i="05">Cd · Drag</span>
+          <span class="dots"></span>
+          <span class="val">0.171</span>
+        </div>
+        <div class="spec-row">
+          <span class="key" data-i="06">Wheel · Front</span>
+          <span class="dots"></span>
+          <span class="val">26<small>mm</small></span>
+        </div>
+        <div class="spec-row">
+          <span class="key" data-i="07">Wheel · Rear</span>
+          <span class="dots"></span>
+          <span class="val">31<small>mm</small></span>
+        </div>
+        <div class="spec-row">
+          <span class="key" data-i="08">Propellant</span>
+          <span class="dots"></span>
+          <span class="val">CO₂ 8<small>g</small></span>
+        </div>
+        <div class="spec-row">
+          <span class="key" data-i="09">Build · Hybrid</span>
+          <span class="dots"></span>
+          <span class="val">CNC + SLA</span>
+        </div>
+        <div class="spec-row">
+          <span class="key" data-i="10">Iteration</span>
+          <span class="dots"></span>
+          <span class="val">Mk IV</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PERFORMANCE BAND
+============================================================ -->
+<section class="perf reveal">
+  <div class="container">
+    <div class="perf-grid">
+      <div class="perf-cell" data-i="P·01">
+        <span class="pk">Race Time</span>
+        <span class="pv" data-count="1.04" data-decimals="2">0.00</span>
+        <span class="pu">seconds · 22.4 m</span>
+      </div>
+      <div class="perf-cell" data-i="P·02">
+        <span class="pk">Top Velocity</span>
+        <span class="pv" data-count="79.6" data-decimals="1">0.0</span>
+        <span class="pu">km / hour</span>
+      </div>
+      <div class="perf-cell" data-i="P·03">
+        <span class="pk">0 → 80</span>
+        <span class="pv" data-count="0.92" data-decimals="2">0.00</span>
+        <span class="pu">seconds</span>
+      </div>
+      <div class="perf-cell" data-i="P·04">
+        <span class="pk">Iterations · Mk</span>
+        <span class="pv" data-count="14" data-decimals="0">0</span>
+        <span class="pu">prototypes shipped</span>
+      </div>
+    </div>
+    <div class="perf-foot">
+      <span>Telemetry · Logged 03 · 2026</span>
+      <span>Track · INDOOR / 22.4 m / Class : PRO</span>
+      <span>Source · Onboard accelerometer + photo gates</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     03 — CREW
+============================================================ -->
+<section id="crew">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-num"><span>0</span>3</div>
+      <div>
+        <div class="section-kicker">The crew · Six roles, one car</div>
+        <h2 class="section-title">Built by hand,<br/>raced by name</h2>
+      </div>
+    </div>
+
+    <div class="crew-grid">
+      <article class="crew-card reveal d1">
+        <div class="crew-top">
+          <span class="crew-num">01</span>
+          <span class="mono small upper" style="color:var(--muted);">SR · 26</span>
+        </div>
+        <div class="crew-portrait" data-init="A"></div>
+        <div class="crew-bottom">
+          <div class="crew-role">Team Principal</div>
+          <div class="crew-name">Alex<br/>Reyes</div>
+          <p class="crew-bio">Strategy, race-day comms, sponsor relations. Calls the shot when the timing screen flickers.</p>
+        </div>
+      </article>
+
+      <article class="crew-card reveal d2">
+        <div class="crew-top">
+          <span class="crew-num">02</span>
+          <span class="mono small upper" style="color:var(--muted);">SR · 26</span>
+        </div>
+        <div class="crew-portrait" data-init="K"></div>
+        <div class="crew-bottom">
+          <div class="crew-role">Design Engineer</div>
+          <div class="crew-name">Kai<br/>Mehta</div>
+          <p class="crew-bio">Owns CAD and CFD. Iterates aero shells until the drag coefficient hits 0.171 or breaks.</p>
+        </div>
+      </article>
+
+      <article class="crew-card reveal d3">
+        <div class="crew-top">
+          <span class="crew-num">03</span>
+          <span class="mono small upper" style="color:var(--muted);">SR · 26</span>
+        </div>
+        <div class="crew-portrait" data-init="J"></div>
+        <div class="crew-bottom">
+          <div class="crew-role">Manufacturing Engineer</div>
+          <div class="crew-name">Jordan<br/>Okafor</div>
+          <p class="crew-bio">Three-axis CNC by day, SLA finishing by night. Carries a digital caliper everywhere.</p>
+        </div>
+      </article>
+
+      <article class="crew-card reveal d4">
+        <div class="crew-top">
+          <span class="crew-num">04</span>
+          <span class="mono small upper" style="color:var(--muted);">SR · 26</span>
+        </div>
+        <div class="crew-portrait" data-init="S"></div>
+        <div class="crew-bottom">
+          <div class="crew-role">Resources Manager</div>
+          <div class="crew-name">Sana<br/>Park</div>
+          <p class="crew-bio">Budgets, partnerships, logistics, paperwork. The reason any of this is funded.</p>
+        </div>
+      </article>
+
+      <article class="crew-card reveal d5">
+        <div class="crew-top">
+          <span class="crew-num">05</span>
+          <span class="mono small upper" style="color:var(--muted);">SR · 26</span>
+        </div>
+        <div class="crew-portrait" data-init="N"></div>
+        <div class="crew-bottom">
+          <div class="crew-role">Graphic Designer</div>
+          <div class="crew-name">Noor<br/>Al-Hassan</div>
+          <p class="crew-bio">Livery, identity, pit-wall print, the type you're reading right now. Brand custodian.</p>
+        </div>
+      </article>
+
+      <article class="crew-card reveal d5">
+        <div class="crew-top">
+          <span class="crew-num">06</span>
+          <span class="mono small upper" style="color:var(--muted);">SR · 26</span>
+        </div>
+        <div class="crew-portrait" data-init="M"></div>
+        <div class="crew-bottom">
+          <div class="crew-role">Media · Marketing</div>
+          <div class="crew-name">Mira<br/>Lindqvist</div>
+          <p class="crew-bio">Documentary footage, social, press. Translates engineering into a story sponsors can read.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     04 — RACE LOG
+============================================================ -->
+<section id="log">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-num"><span>0</span>4</div>
+      <div>
+        <div class="section-kicker">Race Log · 24 → 26 Season</div>
+        <h2 class="section-title">From a school garage to the World Finals</h2>
+      </div>
+    </div>
+
+    <div class="log-wrap">
+      <aside class="log-side reveal d1">
+        <p>SUPERCHARGED started on a single workbench with a borrowed mill and a printable rulebook. Three seasons later we're representing our country in Singapore. Below: every milestone that mattered.</p>
+        <span class="badge">Currently · Final Build · 26·09</span>
+      </aside>
+
+      <ol class="timeline">
+        <li class="ev reveal d1">
+          <div class="ev-date">10 · 2024</div>
+          <h3 class="ev-title">Garage Year Zero</h3>
+          <p class="ev-body">Six students, one mill, and a charter pinned above the bench. First CFD pass on the SR-Mk I.</p>
+          <span class="ev-stat"><strong>1.41 s</strong>·Mk I race time</span>
+        </li>
+        <li class="ev reveal d2">
+          <div class="ev-date">03 · 2025</div>
+          <h3 class="ev-title">Regional Championship · 1st</h3>
+          <p class="ev-body">Best Pit Display, Fastest Car, and Knockout victory. Booked the national ticket with Mk II in our pit boxes.</p>
+          <span class="ev-stat"><strong>1.18 s</strong>·Mk II race time</span>
+        </li>
+        <li class="ev reveal d3">
+          <div class="ev-date">07 · 2025</div>
+          <h3 class="ev-title">National Final · Runner-up</h3>
+          <p class="ev-body">Mk III shaved 90 ms off the regional time. Lost the final by 7 thousandths. Built Mk IV that night.</p>
+          <span class="ev-stat"><strong>1.09 s</strong>·Mk III race time</span>
+        </li>
+        <li class="ev reveal d4">
+          <div class="ev-date">11 · 2025</div>
+          <h3 class="ev-title">World Finals Selection</h3>
+          <p class="ev-body">Officially named to the 2026 World Finals roster — top 24 of more than 17,000 teams worldwide.</p>
+          <span class="ev-stat"><strong>+24</strong>·Global Selection</span>
+        </li>
+        <li class="ev now reveal d5">
+          <div class="ev-date">09 · 2026 · NOW</div>
+          <h3 class="ev-title">Singapore — World Finals</h3>
+          <p class="ev-body">Mk IV "Onyx" goes into parc fermé in September. Three days of judging, one day of racing, one stopwatch.</p>
+          <span class="ev-stat"><strong>1.04 s</strong>·Target race time</span>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     05 — PARTNERS
+============================================================ -->
+<section id="partners">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-num"><span>0</span>5</div>
+      <div>
+        <div class="section-kicker">Partners · They make the build possible</div>
+        <h2 class="section-title">Engineered with</h2>
+      </div>
+    </div>
+
+    <div class="partners-grid reveal">
+      <div class="partner"><span class="tier">Title</span><span>Northgate Engineering</span></div>
+      <div class="partner"><span class="tier">Principal</span><span>Vector / Aero Lab</span></div>
+      <div class="partner"><span class="tier">Principal</span><span>Halcyon Materials</span></div>
+      <div class="partner"><span class="tier">Technical</span><span>3-Axis Foundry</span></div>
+      <div class="partner"><span class="tier">Technical</span><span>Stratus CAD</span></div>
+      <div class="partner"><span class="tier">Logistic</span><span>Kallisto Logistics</span></div>
+      <div class="partner"><span class="tier">Patron</span><span>The Fairlie Trust</span></div>
+      <div class="partner"><span class="tier">Patron</span><span>Anson &amp; Co.</span></div>
+    </div>
+
+    <div class="partners-cta reveal">
+      <span>Tier · Title — Principal — Technical — Patron</span>
+      <a href="#engage">Become a partner →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     06 — ENGAGE
+============================================================ -->
+<section id="engage" class="engage">
+  <div class="container">
+    <div class="engage-inner">
+      <div class="reveal d1">
+        <div class="section-kicker" style="margin-bottom:1.2rem;">Engage · 06</div>
+        <h2>
+          <span>Put your</span><br/>
+          <span class="acc">name</span><br/>
+          <span class="out">on the car.</span>
+        </h2>
+        <p class="engage-body">We have a finished car, a story, and a stopwatch that's still ticking. Sponsorship tiers are open until parc fermé closes in August. Partners receive livery placement, race-day passes, finance reports, and a documentary credit. Schools, students, and press: get in touch directly.</p>
+      </div>
+
+      <div class="cta-stack reveal d2">
+        <a class="cta primary" href="mailto:hello@supercharged.team">
+          <span>Sponsor the team</span><span class="arr">→</span>
+        </a>
+        <a class="cta" href="mailto:press@supercharged.team">
+          <span>Press &amp; Media</span><span class="arr">→</span>
+        </a>
+        <a class="cta" href="mailto:hello@supercharged.team">
+          <span>Speaking · Schools</span><span class="arr">→</span>
+        </a>
+        <a class="cta" href="#top">
+          <span>Download Dossier · PDF</span><span class="arr">↓</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer>
+  <div class="container">
+    <div class="foot-inner">
+      <div class="foot-brand">
+        Super<br/>Charged
+        <small>STEM Racing™ · World Finals · 2026</small>
+      </div>
+      <div class="foot-col">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="#manifesto">01 · Manifesto</a></li>
+          <li><a href="#machine">02 · Machine</a></li>
+          <li><a href="#crew">03 · Crew</a></li>
+          <li><a href="#log">04 · Race Log</a></li>
+          <li><a href="#partners">05 · Partners</a></li>
+          <li><a href="#engage">06 · Engage</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Comms</h5>
+        <ul>
+          <li><a href="mailto:hello@supercharged.team">hello@supercharged.team</a></li>
+          <li><a href="mailto:press@supercharged.team">press@supercharged.team</a></li>
+          <li><a href="#">Instagram · @sr_supercharged</a></li>
+          <li><a href="#">LinkedIn · /supercharged-sr</a></li>
+          <li><a href="#">YouTube · @supercharged-sr</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Garage</h5>
+        <ul>
+          <li>Bay 4 · Workshop Block</li>
+          <li>The British School</li>
+          <li>UTC ±00:00</li>
+          <li><a href="#">Open hours · 16:00 — 19:00</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 SUPERCHARGED · SR · All rights to the livery reserved</span>
+      <span>STEM Racing™ is a trademark of the F1 in Schools STEM Foundation</span>
+      <span>Site rev · 04·26</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Live UTC clock in nav
+  const clockEl = document.getElementById('liveClock');
+  function tickClock() {
+    const d = new Date();
+    const hh = String(d.getUTCHours()).padStart(2,'0');
+    const mm = String(d.getUTCMinutes()).padStart(2,'0');
+    const ss = String(d.getUTCSeconds()).padStart(2,'0');
+    if (clockEl) clockEl.textContent = `${hh}:${mm}:${ss} UTC`;
+  }
+  tickClock(); setInterval(tickClock, 1000);
+
+  // Race-start lights sequence on load
+  const lamps = document.querySelectorAll('.lights .lamp');
+  const lightsLabel = document.getElementById('lightsLabel');
+  function runLights() {
+    lamps.forEach(l => l.classList.remove('on'));
+    if (lightsLabel) lightsLabel.textContent = '— Standby';
+    lamps.forEach((lamp, i) => {
+      setTimeout(() => {
+        lamp.classList.add('on');
+        if (lightsLabel) lightsLabel.textContent = `— Lights ${i+1} / 5`;
+      }, 600 + i * 420);
+    });
+    setTimeout(() => {
+      lamps.forEach(l => l.classList.remove('on'));
+      if (lightsLabel) lightsLabel.textContent = '— Lights out · GO';
+    }, 600 + 5 * 420 + 700);
+    setTimeout(runLights, 600 + 5 * 420 + 4500);
+  }
+  runLights();
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Number counters in performance band
+  const counters = document.querySelectorAll('[data-count]');
+  const cIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const target = parseFloat(el.dataset.count);
+      const decimals = parseInt(el.dataset.decimals || '0', 10);
+      const dur = 1500;
+      const start = performance.now();
+      function frame(now) {
+        const t = Math.min(1, (now - start) / dur);
+        const eased = 1 - Math.pow(1 - t, 3);
+        const v = target * eased;
+        el.textContent = v.toFixed(decimals);
+        if (t < 1) requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+      cIO.unobserve(el);
+    });
+  }, { threshold: 0.4 });
+  counters.forEach(c => cIO.observe(c));
+
+  // Magnetic-ish hover on primary CTA (very subtle)
+  document.querySelectorAll('.cta').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const r = btn.getBoundingClientRect();
+      const x = (e.clientX - r.left - r.width/2) / r.width;
+      const y = (e.clientY - r.top - r.height/2) / r.height;
+      btn.style.transform = `translate(${x * 6}px, ${y * 4}px)`;
+    });
+    btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+  });
+
+  // Parallax-ish drift on the hero accent shape
+  const shape = document.querySelector('.hero-shape');
+  document.addEventListener('scroll', () => {
+    if (!shape) return;
+    const y = window.scrollY;
+    shape.style.transform = `translateY(${y * 0.12}px) scale(${1 + Math.min(y, 600) * 0.0002})`;
+  }, { passive: true });
+</script>
+</body>
+</html>
